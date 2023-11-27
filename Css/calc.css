@@ -1,0 +1,36 @@
+/**
+hex for background: #1c293a
+hex for buttons: #354356
+numbers: white
+other keypads: gray
+hovered button: #6c62ff
+*/
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #1c293a;
+  height: 100%;
+}
+
+#calcContainer {
+  border: 1px solid white;
+  width: 350px;
+}
+
+#calcContent {
+  padding: 10px;
+}
+
+.buttonItem {
+  width: 70px;
+  height: 70px;
+  background-color: #354356;
+}
+
+.buttonItem:hover {
+  background-color: #6c62ff;
+}
+
