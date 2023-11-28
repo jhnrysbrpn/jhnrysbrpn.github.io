@@ -1,0 +1,6 @@
+.background {
+  width: 100vw;
+  height: max-content;
+  background: linear-gradient(to bottom right,rgba(181, 147, 114, 0.4),
+  rgba(171, 124, 79, 0.5));
+}

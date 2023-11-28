@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+  <title>PsychConnect</title>
+  <link rel="stylesheet" type="text/css" href="Assets/Css/PsychConnect.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/96e8d283a5.js" 
+  crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .navi {
+        @apply p-2 mx-4 relative text-black text-sm md:text-sm font-bold uppercase tracking-[3px] leading-10 font-semibold hover:text-d-brown
+      }
+      .navi::before {
+        @apply content-[''] bg-d-gray h-[1px]  w-[0%] top-0 left-0 absolute duration-300 ease-in-out
+      }
+      .navi:hover::before {
+        @apply w-[100%] opacity-100 
+      }
+      .navi::after {
+        @apply content-[''] bg-d-gray h-[1px] w-[0%] bottom-0 right-0 absolute duration-300 ease-in-out
+      }
+      .navi:hover::after {
+        @apply w-[100%] opacity-100 
+      }
+      .icons {
+          @apply w-8  m-4  text-lg md:w-16 md:text-3xl md:p-4 lg:w-12 lg:text-xl lg:p-2 rounded-full bg-white text-d-gray font-bold
+      }
+      .icons:hover {
+          @apply bg-d-gray text-l-gray
+      }
+      .fNavi {
+          @apply text-lg md:text-3xl lg:text-2xl text-d-gray font-bold
+      }
+      .fNavi:hover {
+          @apply text-black
+      }
+    }
+  </style>
+
+<script>
+  tailwind.config = {
+    theme: {
+      colors: {
+        'gray' : '#999999',
+        'white' : '#fff',
+        's-white' : '#ededed',
+        'b-white' : '#e8ddd3',
+        'brown' : '#b0855a',
+        'l-brown' : '#e3bb9d',
+        'd-brown' : '#7d5228',
+        'black' : '#111',
+        'l-gray' : '#e3e3e3',
+        'd-gray' : '#5c5c5c',
+        'c-gray' : 'rgba(187, 189, 189, 0.3)',
+      },
+    }
+  }
+</script>
+
+<body class="flex w-full h-full m-0 p-0 font-[Garamond]">
+  <div class="background">
+
+    <nav class="w-full bg-b-white shadow md:flex md:items-center md:justify-between z-10 fixed">
+      <div class="flex justify-between items-center">
+        <img src="Assets/Img/DT.png" class="w-12 md:w-16 m-2 ML- p-1 bg-d-gray inline cursor-pointer rounded-full animate-pulse">
+
+        <span class="text-3xl cursor-pointer mx-4 md:hidden block">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+       </div>
+
+
+        <ul class="md:flex mr-16 md:static absolute bg-b-white z-[-1] md:z-auto w-full md:w-auto 
+        md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in 
+        duration-500 md:items-center gap-[3vw]">
+          <li>
+            <a href="#Home" class="navi">Home</a>
+          </li>
+          <li>
+            <a href="" class="navi">Services</a>
+          </li>
+          <li>
+            <a href="" class="navi">Members</a>
+          </li>
+          <li>
+            <a href="PS-CForm.html" class="navi">Contact Us</a>
+          </li>
+        </ul>
+
+    </nav>
+
+    <div id="Home" class="w-full h-full mt-[6rem] md:mt-[9rem] lg:mt-[12rem] text-center">
+      <h1 class="m-3 text-xl md:text-2xl lg:text-3xl text-d-gray font-semibold uppercase tracking-wide">
+        " Psych Connect :  Empowering Psychology Students as Empathetic Advocates "
+      </h1>
+      <div class="container w-2/3 mx-auto mt-[2em] text-sm md:text-2xl whitespace-normal text-justify
+       text-d-gray font-semibold tracking-wider">
+       <p>
+         <span class="text-lg md:text-2xl whitespace-pre-line">"PsychConnect"</span>
+          is a collective initiative led by 1st-year BS Psychology
+          students at Western Mindanao State University in the College 
+          of Liberal Arts. Its primary goal is to foster empathy and promote
+          mental health awareness within the College of Liberal Arts community.
+       </p>
+      </div>
+
+      <div class="container m-8 mx-auto text-d-gray">
+        <h1 class="mx-10 text-xl md:text-2xl lg:text-3xl font-bold text-justify tracking-wide">
+           Problems Prompting the Establishment of PsychConnect
+           Advocacy in Response to Mental Health Issues within the College 
+           of Liberal Arts Community:</h1>
+
+           <ol class="list-decimal list-outside container md:w-1/2 mx-auto pb-8">
+            <li> <!-- F I R S T -->
+              <h1 class="m-8 md:m-4 text-xl md:text-3xl font-bold text-left">
+                Lack of Mental Health Awareness and Stigma:
+              </h1>
+              <p class="m-8 md:text-xl font font-semibold whitespace-normal text-justify">
+                Problem: There might be a prevailing lack of awareness about mental health issues 
+                and stigma surrounding discussions related to mental health within the College of 
+                Liberal Arts community.
+              </p>
+              <h1 class="m-4 text-left text-xl md:text-2xl font-bold tracking-wide">
+                Indicators:
+              </h1>
+               <ul class="m-4 p-4 md:text-xl list-disc list-outside text-justify"> <!-- S U B  U L-->
+                <li>
+                   <p>Limited discussions or open dialogue about mental health topics among students and faculty.</p>
+                </li>
+                <li>
+                  <p>Existence of misconceptions, stereotypes, or negative attitudes towards individuals facing mental health challenges.</p>
+                </li>
+                <li>
+                  <p>Reluctance among students to seek help or support due to fear of judgment or stigma.</p>
+                </li>
+               </ul>
+            </li>
+            <li> <!-- S E C O N D -->
+              <h1 class="m-8 md:m-4 text-xl md:text-3xl font-bold text-left">
+                Insufficient Support Networks and Resources:
+              </h1>
+              <p class="m-8 md:text-xl font font-semibold whitespace-normal text-justify">
+                Problem: There might be a lack of adequate support networks or accessible resources available for individuals
+                facing mental health issues within the College of Liberal Arts community.
+              </p>
+              <h1 class="m-4 text-left text-xl md:text-2xl font-bold tracking-wide">
+                Indicators:
+              </h1>
+               <ul class="m-4 p-4 md:text-xl list-disc list-outside text-justify"> <!-- S U B  U L-->
+                <li>
+                   <p>Limited availability of peer support systems or structured networks for students to seek guidance or share experiences.</p>
+                </li>
+                <li>
+                  <p>Students feeling isolated or unsupported in dealing with mental health concerns due to a lack of available resources or platforms</p>
+                </li>
+                <li>
+                  <p>While the WMSU Psychology Society operates within the College of Liberal Arts, their initiatives mainly target the Psychology Department exclusively.
+                  </p>
+                </li>
+               </ul>
+            </li>
+            <li> <!-- T H I R D -->
+              <h1 class="m-8 md:m-4 text-xl md:text-3xl font-bold text-left">
+                Empathy Deficit and Need for Supportive Community:
+              </h1>
+              <p class="m-8 md:text-xl font font-semibold whitespace-normal text-justify">
+                Problem: There could be a lack of emphasis on empathy-building and creating a supportive community for individuals experiencing
+                mental health challenges within the College of Liberal Arts setting.
+              </p>
+              <h1 class="m-4 text-left text-xl md:text-2xl font-bold tracking-wide">
+                Indicators:
+              </h1>
+               <ul class="m-4 p-4 md:text-xl list-disc list-outside text-justify"> <!-- S U B  U L-->
+                <li>
+                   <p>Minimal focus on fostering empathy or teaching empathetic communication skills among students and faculty.</p>
+                </li>
+                <li>
+                  <p>Absence of structured platforms or initiatives promoting empathy and understanding among peers regarding mental health issues.</p>
+                </li>
+                <li>
+                  <p>Students feeling disconnected or unsupported due to a lack of empathetic interactions or understanding within the university community.
+                  </p>
+                </li>
+               </ul>
+            </li>
+           </ol>
+
+           <div class="container mx-auto lg:w-2/3 whitespace-normal text-justify">       
+             <h1 class="m-4 pb-[8rem] text-lg md:text-2xl lg:text-2xl text-d-gray font-semibold tracking-wide">
+              These identified problems have served as catalysts for initiating the PsychConnect advocacy, aiming 
+              to address these issues by fostering empathy, raising mental health awareness, and establishing support
+              networks within the College of Liberal Arts community.
+             </h1>
+           </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="h-[20vh] p-8 bg-b-white text-center items-center box-border">
+        <div class="socialicons">
+          <a href="">
+           <i class="icons fab fa-facebook-f"></i>
+          </a>
+          <a href="">
+           <i class="icons fab fa-instagram"></i>
+          </a>
+         <a href="">
+          <i class="icons fa-brands fa-linkedin"></i>
+        </a>
+         <a href="">
+           <i class="icons fa-brands fa-github"></i>
+         </a>
+        </div>
+
+        <ul class="flex mx-auto lg:w-1/2 justify-between md:justify-evenly lg:justify-evenly">
+          <li>
+            <a href="#Home" class="fNavi">Home</a>
+          </li>
+          <li>
+            <a href="" class="fNavi">About</a>
+          </li>
+          <li>
+            <a href="" class="fNavi">Services</a>
+          </li>
+          <li>
+            <a href="PS-CForm.html" class="fNavi">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+</body>
+<script src="Assets/JavaScript/PsychConnect.js"></script>
+</html>
