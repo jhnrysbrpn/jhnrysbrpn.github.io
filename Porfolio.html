@@ -3,221 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Document</title>
   <link rel="stylesheet" type="text/css" href="Assets/Css/Portfolio.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/96e8d283a5.js" 
   crossorigin="anonymous"></script>
 
-<style type="text/tailwindcss">
-  @layer utilities {
-    .navi {
-      @apply p-2 relative md:text-center lg:text-xl tracking-[3px] font-semibold hover:text-[#00ffbf]
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .navi {
+        @apply p-2 relative md:text-center lg:text-xl tracking-[3px] font-semibold hover:text-[#00ffbf]
+      }
+      .navi::before {
+        @apply content-[''] bg-[#00ffbf] h-[1px]  w-[0%] top-0 left-0 absolute duration-300 ease-in-out
+      }
+      .navi:hover::before {
+        @apply w-[100%] opacity-100 
+      }
+      .navi::after {
+        @apply content-[''] bg-[#00ffbf] h-[1px] w-[0%] bottom-0 right-0 absolute duration-300 ease-in-out
+      }
+      .navi:hover::after {
+        @apply w-[100%] opacity-100 
+      } .icons {
+          @apply w-8  m-4  text-lg md:w-16 md:text-3xl md:p-4 lg:w-12 lg:text-xl lg:p-2 rounded-full bg-[#444] text-w-smoke font-bold
+      }
+      .icons:hover {
+          @apply bg-w-smoke text-black
+      }
+      .fNavi {
+          @apply text-lg md:text-3xl lg:text-2xl text-gray md:text-w-smoke md:text-d-gray font-bold
+      }
+      .fNavi:hover {
+          @apply text-w-smoke
+      }
     }
-    .navi::before {
-      @apply content-[''] bg-[#00ffbf] h-[1px]  w-[0%] top-0 left-0 absolute duration-300 ease-in-out
+  </style>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        colors: {
+          'g-color': '#02a184',
+          'd-color' : '#1f2625',
+          'l-color' : '#3e4d4a',
+          'gray' : '#999999',
+          'white' : '#fff',
+          'w-smoke' : '#f5f5f5',
+          'black' : '#111',
+          'b-g' : '#03fcd3',
+          'l-gray' : '#e3e3e3',
+          'd-gray' : '#5c5c5c',
+          'c-gray' : 'rgba(187, 189, 189, 0.3)',
+          'l-blue' : '#00c3ff',
+        },
+      }
     }
-    .navi:hover::before {
-      @apply w-[100%] opacity-100 
-    }
-    .navi::after {
-      @apply content-[''] bg-[#00ffbf] h-[1px] w-[0%] bottom-0 right-0 absolute duration-300 ease-in-out
-    }
-    .navi:hover::after {
-      @apply w-[100%] opacity-100 
-    }
-  }
-</style>
-
-<script>
-  tailwind.config = {
-    theme: {
-      colors: {
-        'g-color': '#02a184',
-        'd-color' : '#1f2625',
-        'l-color' : '#3e4d4a',
-        'gray' : '#999999',
-        'white' : '#fff',
-        'black' : '#111',
-        'b-g' : '#03fcd3',
-        'l-gray' : '#e3e3e3',
-        'd-gray' : '#5c5c5c',
-        'c-gray' : 'rgba(187, 189, 189, 0.3)',
-        'l-blue' : '#00c3ff',
-      },
-    }
-  }
-</script>
+  </script>  
 
 </head>
 
- <!-- Navigation Bar -->
-
- <nav class="fixed w-full z-10 bg-transparent backdrop-blur-lg shadow-lg shadow-b-g">
-  <div class="flex flex-wrap items-center justify-between mx-auto p-4 ">
-      <img src="Assets/Img/DT.png" class="h-[3em] animate-bounce lg:ml-[4em]">
+<body class="flex w-full h-[full] flex flex-wrap bg-l-color text-g-color font-[garamond]">
+  <nav class="fixed w-full z-10 bg-transparent backdrop-blur-lg shadow-lg shadow-b-g">
+    <div class="flex flex-wrap items-center justify-between mx-auto p-4 ">
+        <img src="Assets/Img/DT.png" class="h-[3rem] animate-bounce lg:ml-[4rem]">
+    
+    <div class="items-center hidden w-full md:flex md:w-auto md:order-1">
   
-  <div class="items-center hidden w-full md:flex md:w-auto md:order-1">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium md:flex-row md:mt-0 md:border-0">
+  
+        <li>
+          <a href="#home" class="navi">Home</a>
+        </li>
+        <li>
+          <a href="#aboutMe" class="navi">About Me</a>
+        </li>
+        <li>
+          <a href="#skills" class="navi">Skills</a>
+        </li>
+        <li>
+          <a href="#gallery" class="navi">Gallery</a>
+        </li>
+        <li>
+          <a href="#contactMe" class="navi">Contact Me</a>
+        </li>
+        <li>
+          <a href="../Files/MyRESUME.pdf" download="Resume" class="navi">Resume</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
 
-    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg
-    md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 
-    md:dark:bg-gray-900 dark:border-gray-700 lg:translate-x-[19em]">
+  <section class="container mx-auto w-full h-full bg-d-color content-center items-center text-center shadow-2xl shadow-b-g">
 
-      <li>
-        <a href="#home" class="navi">Home</a>
-      </li>
-      <li>
-        <a href="#aboutMe" class="navi">About Me</a>
-      </li>
-      <li>
-        <a href="#skills" class="navi">Skills</a>
-      </li>
-      <li>
-        <a href="#gallery" class="navi">Gallery</a>
-      </li>
-      <li>
-        <a href="#contactMe" class="navi">Contact Me</a>
-      </li>
-      <li>
-        <a href="../Files/MyRESUME.pdf" download="Resume" class="navi">Resume</a>
-      </li>
-    </ul>
-  </div>
-  </div>
-</nav>
-
-<body class="flex h-full flex flex-wrap bg-l-color text-g-color font-[garamond]">
-  <section class="container mx-auto h-full bg-d-color content-center items-center text-center shadow-2xl shadow-b-g">
-
-<!--  H O M E  P A G E  -->
-
-  <div id="home" class="h-[60em] lg:h-[70em] md:h-[65em] container mx-auto">
-    <div class="container translate-y-[10em]">
-
-<!--  U P P E R   C O N T A I N E R  -->
- 
-      <div class="container mx-auto flex content-center items-center w-2/3">
-        <div class="box text-center">
-          <header></header>
-          <p class="p-4 md:text-2xl lg:3xl font-semibold text-gray"><span class="md:text-5xl"> Hi There! </span><br>
-             I'm <span class="md:text-5xl text-g-color">John Rey </span> a <span class="md:text-5xl text-g-color"> WEB DEVELOPER </span> 
-            at your SERVICE.<br>
-            willing to create and design your Website anytime and anywhere.  
-          </p>
-        </div>
-      </div>
-
+    <!--  H O M E  P A G E  -->
+    
+      <div id="home" class="w-full h-[48rem] md:h-[65rem] lg:h-[70rem]  container mx-auto">
+        <div class="container translate-y-[10rem]">
+    
+    <!--  U P P E R   C O N T A I N E R  -->
+     
+          <div class="container mx-auto flex content-center items-center w-2/3">
+            <div class="box text-center">
+              <header></header>
+              <p class="p-4 md:text-2xl lg:3xl font-semibold text-gray"><span class="md:text-5xl"> Hi There! </span><br>
+                 I'm <span class="md:text-5xl text-g-color">John Rey </span> a <span class="md:text-5xl text-g-color"> WEB DEVELOPER </span> 
+                at your SERVICE.<br>
+                willing to create and design your Website anytime and anywhere.  
+              </p>
+            </div>
+          </div>
 <!-- L O W E R  C O N T A I N E R -->
 
-    <div  class="lg:w-1/2 m-8 lg:translate-x-[22em]">
-     <img src="Assets/Img/avatar_bg.png" class=" rounded-lg shadow-lg shadow-b-g">
-    </div>
+<div  class="lg:w-1/2 m-8 lg:translate-x-[22rem]">
+  <img src="Assets/Img/avatar_bg.png" class=" rounded-lg shadow-lg shadow-b-g">
+ </div>
 
-    </div>
-  </div>
- 
+ </div>
+</div>
+
 <!--  A B O U T   M E -->
-
-   <div id="aboutMe" class="w-full h-[68em] lg:h-[83em] md:h-[75em]">
+<div id="aboutMe" class="w-full h-full lg:h-[83rem] md:h-[80rem]">
 
 <!-- L I N E -->
-
-    <div class=":mb-[7em]">
-      <h1 class="line text-2xl lg:text-5xl md:text-3xl text-gray tracking-widest font-semibold"> About Me</h1>
-    </div>
+<div class=":mb-[7rem]">
+  <h1 class="line text-2xl lg:text-5xl md:text-3xl text-gray tracking-widest font-semibold"> About Me</h1>
+</div>
 
 <!--  C O N T E N T -->
 
-    <div class="container mx-auto flex flex-wrap lg:translate-y-10 h-full">
-      <div class=" text-center w-full h-1/2 lg:w-1/2">
-        <div class="m-16">
-        <h1 class="text-justify md:text-3xl lg:text-4xl font-semibold tracking-wider pb-8"> Hi! I'm John Rey Sobrepeña</h1>
-        <p class="text-justify md:text-2xl lg:text-3xl text-gray tracking-wider indent-8"> 18 years old, and a Senior High School Graduate
-          living in Rodriguez, Rizal. what I do like to do most is appreciating beauty and art, I know how to draw and I've been
-          making digital arts for fun, with my knowledge and skills in arts I've been making use of it in making and designing webpages 
-          and being immersed in Web Development I'd like to go further and become a Full Stack Web Developer.     
-        </p>
-
-        <div class="container h-[25em] lg:w-[1/2] md:w-[40em] lg:h-[33em] md:h-[22em] box-content rounded bg-c-gray lg:translate-y-12 shadow-lg shadow-b-g">
-        <p class="text-justify lg:text-2xl text-l-gray tracking-widest translate-y-5 m-8"><strong> Name : </strong> John Rey Castro Sobrepeña <br>
-          <strong> Age : </strong> 18 Years Old <br> <strong> Birth Date : </strong> November 23, 2004 <br> <strong>Height : </strong> 168 cm <br><br>
-           <strong class="lg:text-3xl">EDUCATION:</strong> <br> <br>
-           <strong> UPPER-SECONDARY: </strong> <br> 2021 - 2023 - Valley High Academy <br> <br> 
-           <strong> SECONDARY : </strong> 2018 - 2021 - San Jose National Highschool <br> <br>
-           <strong>ELEMENTARY : </strong> 2011 - 2018 - Virgen Del Pilar School
-         </p>
-        </div>
-
-        </div>
+<div class="container mx-auto flex flex-wrap lg:translate-y-10 h-full">
+  <div class=" text-center w-full h-1/2 lg:w-1/2">
+    <div class="m-16">
+    <h1 class="text-justify md:text-3xl lg:text-4xl font-semibold tracking-wider pb-8"> Hi! I'm John Rey Sobrepeña</h1>
+    <p class="text-justify md:text-2xl lg:text-3xl text-gray tracking-wider indent-8"> 18 years old, and a Senior High School Graduate
+      living in Rodriguez, Rizal. what I do like to do most is appreciating beauty and art, I know how to draw and I've been
+      making digital arts for fun, with my knowledge and skills in arts I've been making use of it in making and designing webpages 
+      and being immersed in Web Development I'd like to go further and become a Full Stack Web Developer.     
+    </p>
+    
+    <div class="container h-[34rem] md:w-[40rem] lg:w-[1/2] lg:h-[33rem] md:h-[22rem] box-content rounded bg-c-gray lg:translate-y-12 shadow-lg shadow-b-g">
+      <p class="text-justify lg:text-2xl text-l-gray tracking-widest translate-y-5 m-8"><strong> Name : </strong> John Rey Castro Sobrepeña <br>
+        <strong> Age : </strong> 18 Years Old <br> <strong> Birth Date : </strong> November 23, 2004 <br> <strong>Height : </strong> 168 cm <br><br>
+         <strong class="lg:text-3xl">EDUCATION:</strong> <br> <br>
+         <strong> UPPER-SECONDARY: </strong> <br> 2021 - 2023 - Valley High Academy <br> <br> 
+         <strong> SECONDARY : </strong> 2018 - 2021 - San Jose National Highschool <br> <br>
+         <strong>ELEMENTARY : </strong> 2011 - 2018 - Virgen Del Pilar School
+       </p>
       </div>
       
-      <div class="container w-1/3 lg:h-[40em] translate-x-[10em] translate-y-14 lg:translate-y-[15em] lg:translate-x-[5em] md:translate-x-[15em]">
-       <img src="Assets/Img/Gallery/Pic5.png"> 
-      </div>
-   
     </div>
-   </div>
+  </div>
+  
+  <div class="container w-1/3 lg:h-[40rem] translate-x-[8rem] lg:translate-x-[5rem] md:translate-x-[15rem] pb-10 md:pt-16">
+   <img src="Assets/Img/Gallery/Pic5.png"> 
+  </div>
 
+</div>
+</div>
 <!--  S K I L L S -->
 
-<div id="skills" class="w-full h-[12em] md:h-[25em] lg:h-[50em]"> 
+<div id="skills" class="w-full h-[17rem] md:h-[25rem] lg:h-[50rem]"> 
   
-      <!-- L I N E -->
+  <!-- L I N E -->
 
-  <div class="lg:mb-20">
-    <h1 class="line text-2xl lg:text-5xl md:text-3xl text-gray tracking-widest font-semibold"> Skills</h1>
-  </div>
+<div class="lg:mb-20">
+<h1 class="line text-2xl lg:text-5xl md:text-3xl text-gray tracking-widest font-semibold"> Skills</h1>
+</div>
 
 <!--  C O N T E N T  -->
 
-    <div class="w-full h-1/2 grid items-center justify-evenly grid-cols-3 grid-rows-2 translate-x-[3em] lg:translate-x-[10em] md:translate-x-[4em]">
-      <div>
-        <svg class="w-[4em] lg:w-[12em] md:w-[8em] p-4 bg-gray rounded-lg shadow-lg shadow-b-g hover:w-[6em] lg:hover:w-[14em] md:hover:w-[10em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="html"><path fill="#E44D26" d="M3.345 21.601 1.419 0h21.162l-1.928 21.597L11.987 24l-8.642-2.399z">
-         </path><path fill="#F16529" d="m12 22.164 7.003-1.941L20.65 1.766H12v20.398z"></path><path fill="#EBEBEB" d="M12 9.778H8.494l-.242-2.713H12V4.416H5.357l.063.71.651 
-         7.301H12V9.778zm0 6.88-.012.003-2.95-.797-.189-2.113H6.19l.371 4.16 5.427 1.506.012-.003v-2.756z"></path><path fill="#FFF" d="M11.991 9.778v2.649h3.262l-.308 
-        3.436-2.955.797v2.756l5.431-1.505.04-.448.623-6.975.065-.711h-.714l-5.444.001zm0-5.362v2.649h6.399l.053-.596.121-1.343.063-.711-6.636.001z"></path></svg>
-      </div>
-      <div>
-        <svg class="w-[4em] lg:w-[12em] md:w-[8em] p-4 bg-gray rounded-lg shadow-lg shadow-b-g hover:w-[6em] lg:hover:w-[14em] md:hover:w-[10em] " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="css"><path fill="#2196F3" d="m1 0 1.275 14.4L8 16l5.723-1.599L15 0z"></path><path fill="#FAFAFA" d="m12.274 4.709-.161 1.809-.486 
-        5.423L8 12.944l-.003.001-3.625-1.004-.253-2.836h1.776l.132 1.471 1.971.532.001-.001 1.974-.532.269-2.451-6.208.017-.176-1.676 6.533-.077.132-1.794-6.84.019-.115-1.669h8.864z"></path></svg>
-      </div>
-      <div>
-        <svg class="w-[4em] lg:w-[12em] md:w-[8em] p-4 bg-gray rounded-lg shadow-lg shadow-b-g hover:w-[6em] lg:hover:w-[14em] md:hover:w-[10em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" id="javascript"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185h-125.184z"></path><path fill="#323330" d="M116.347 
-          96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 
-           9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 
-           1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zm-46.885-37.793h-11.709l-.048
-          30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189
-        7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z"></path></svg>
-      </div>
-      <div>
-        <svg class="w-[4em] h-[4em] lg:w-[12em] md:w-[8em] lg:h-[12em] md:h-[8em] md:translate-x-[8.1em] md:translate-y-[6em] hover:w-[6em] lg:hover:w-[14em] lg:hover:h-[14em] md:hover:w-[10em] md:hover:h-[10em] p-4 bg-gray rounded-lg text-gray-800 dark:text-l-blue shadow-lg shadow-b-g 
-         translate-x-[5em] lg:translate-x-[16em] translate-y-[2.5em]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
-         <path d="M9.782.72a4.773 4.773 0 0 0-4.8 4.173 3.43 3.43 0 0 1 2.741-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.934-2.865 
-         3.137-3.921-.969 1.379-2.44 2.207-4.259 1.231C14.488 3.365 13.551.6 9.782.72ZM4.8 6.979A4.772 4.772 0 0 0 0 11.151a3.43 3.43 0 0 1 2.745-1.687c1.689 0 
-        2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.933-2.865 3.137-3.921-.97 1.379-2.44 2.208-4.259 1.231C9.51 9.623 8.573 6.853 4.8 6.979Z"/>
-      </svg>
-      </div>
-      <div>
-        <svg class="w-[4em] lg:w-[12em] md:w-[8em] p-4 bg-gray rounded-lg shadow-lg shadow-b-g hover:w-[6em] lg:hover:w-[14em] md:hover:w-[10em] lg:translate-x-[16em] md:translate-x-[8.1em] md:translate-y-[6em] translate-x-[5em] translate-y-[2.5em]"
-          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="github"><path d="M7.999 0C3.582 0 0 3.596 0 8.032a8.031 8.031 0 0 0 5.472 7.621c.4.074.546-.174.546-.387 
-           0-.191-.007-.696-.011-1.366-2.225.485-2.695-1.077-2.695-1.077-.363-.928-.888-1.175-.888-1.175-.727-.498.054-.488.054-.488.803.057 1.225.828 1.225.828.714 1.227 1.873.873 
-           2.329.667.072-.519.279-.873.508-1.074-1.776-.203-3.644-.892-3.644-3.969 0-.877.312-1.594.824-2.156-.083-.203-.357-1.02.078-2.125 0 0 .672-.216 2.2.823a7.633 7.633 0 0 1 2.003-.27 
-          7.65 7.65 0 0 1 2.003.271c1.527-1.039 2.198-.823 2.198-.823.436 1.106.162 1.922.08 2.125.513.562.822 1.279.822 2.156 0 3.085-1.87 3.764-3.652 3.963.287.248.543.738.543 1.487 0 
-         1.074-.01 1.94-.01 2.203 0 .215.144.465.55.386A8.032 8.032 0 0 0 16 8.032C16 3.596 12.418 0 7.999 0z"></path></svg>
-      </div>
+<div class="w-full h-1/2 grid items-center justify-evenly grid-cols-3 grid-rows-2 translate-x-8 md:translate-x-[4rem] lg:translate-x-[10rem]">
+  <div>
+    <svg class="w-[4rem] lg:w-[12rem] md:w-[8rem] p-4 bg-gray rounded-lg shadow-lg shadow-b-g hover:w-[6rem] lg:hover:w-[14rem] md:hover:w-[10rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="html"><path fill="#E44D26" d="M3.345 21.601 1.419 0h21.162l-1.928 21.597L11.987 24l-8.642-2.399z">
+     </path><path fill="#F16529" d="m12 22.164 7.003-1.941L20.65 1.766H12v20.398z"></path><path fill="#EBEBEB" d="M12 9.778H8.494l-.242-2.713H12V4.416H5.357l.063.71.651 
+     7.301H12V9.778zm0 6.88-.012.003-2.95-.797-.189-2.113H6.19l.371 4.16 5.427 1.506.012-.003v-2.756z"></path><path fill="#FFF" d="M11.991 9.778v2.649h3.262l-.308 
+    3.436-2.955.797v2.756l5.431-1.505.04-.448.623-6.975.065-.711h-.714l-5.444.001zm0-5.362v2.649h6.399l.053-.596.121-1.343.063-.711-6.636.001z"></path></svg>
+  </div>
+  <div>
+    <svg class="w-[4rem] lg:w-[12rem] md:w-[8rem] p-4 bg-gray rounded-lg shadow-lg shadow-b-g hover:w-[6rem] lg:hover:w-[14rem] md:hover:w-[10rem] " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="css"><path fill="#2196F3" d="m1 0 1.275 14.4L8 16l5.723-1.599L15 0z"></path><path fill="#FAFAFA" d="m12.274 4.709-.161 1.809-.486 
+      5.423L8 12.944l-.003.001-3.625-1.004-.253-2.836h1.776l.132 1.471 1.971.532.001-.001 1.974-.532.269-2.451-6.208.017-.176-1.676 6.533-.077.132-1.794-6.84.019-.115-1.669h8.864z"></path></svg>
     </div>
+    <div>
+      <svg class="w-[4rem] lg:w-[12rem] md:w-[8rem] p-4 bg-gray rounded-lg shadow-lg shadow-b-g hover:w-[6rem] lg:hover:w-[14rem] md:hover:w-[10rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" id="javascript"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185h-125.184z"></path><path fill="#323330" d="M116.347 
+        96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 
+         9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 
+         1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zm-46.885-37.793h-11.709l-.048
+        30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189
+      7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z"></path></svg>
+    </div>
+    <div>
+      <svg class="w-[4rem] h-[4rem] lg:w-[12rem] md:w-[8rem] lg:h-[12rem] md:h-[8rem] md:translate-x-[8.1rem] md:translate-y-[6rem] hover:w-[6rem] lg:hover:w-[14rem] lg:hover:h-[14rem] md:hover:w-[10rem] md:hover:h-[10rem] p-4 bg-gray rounded-lg text-gray-800 dark:text-l-blue shadow-lg shadow-b-g 
+       translate-x-[5rem] lg:translate-x-[16rem] translate-y-[2.5rem]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
+       <path d="M9.782.72a4.773 4.773 0 0 0-4.8 4.173 3.43 3.43 0 0 1 2.741-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.934-2.865 
+       3.137-3.921-.969 1.379-2.44 2.207-4.259 1.231C14.488 3.365 13.551.6 9.782.72ZM4.8 6.979A4.772 4.772 0 0 0 0 11.151a3.43 3.43 0 0 1 2.745-1.687c1.689 0 
+      2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.933-2.865 3.137-3.921-.97 1.379-2.44 2.208-4.259 1.231C9.51 9.623 8.573 6.853 4.8 6.979Z"/>
+    </svg>
+    </div>
+    <div>
+      <svg class="w-[4rem] lg:w-[12rem] md:w-[8rem] p-4 bg-gray rounded-lg shadow-lg shadow-b-g hover:w-[6rem] lg:hover:w-[14rem] md:hover:w-[10rem] lg:translate-x-[16rem] md:translate-x-[8.1rem] md:translate-y-[6rem] translate-x-[5rem] translate-y-[2.5rem]"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="github"><path d="M7.999 0C3.582 0 0 3.596 0 8.032a8.031 8.031 0 0 0 5.472 7.621c.4.074.546-.174.546-.387 
+         0-.191-.007-.696-.011-1.366-2.225.485-2.695-1.077-2.695-1.077-.363-.928-.888-1.175-.888-1.175-.727-.498.054-.488.054-.488.803.057 1.225.828 1.225.828.714 1.227 1.873.873 
+         2.329.667.072-.519.279-.873.508-1.074-1.776-.203-3.644-.892-3.644-3.969 0-.877.312-1.594.824-2.156-.083-.203-.357-1.02.078-2.125 0 0 .672-.216 2.2.823a7.633 7.633 0 0 1 2.003-.27 
+        7.65 7.65 0 0 1 2.003.271c1.527-1.039 2.198-.823 2.198-.823.436 1.106.162 1.922.08 2.125.513.562.822 1.279.822 2.156 0 3.085-1.87 3.764-3.652 3.963.287.248.543.738.543 1.487 0 
+       1.074-.01 1.94-.01 2.203 0 .215.144.465.55.386A8.032 8.032 0 0 0 16 8.032C16 3.596 12.418 0 7.999 0z"></path></svg>
+    </div>
+  </div>
 
 </div>
 
 <!-- G A L L E R Y  -->
 
-    <div id="gallery" class="w-full h-full">
+<div id="gallery" class="w-full h-full">
 
-      <!-- L I N E -->
+  <!-- L I N E -->
 
-    <div class="m-16 md:m-20 lg:mb-[10em]">
-      <h1 class="line text-2xl lg:text-5xl md:text-3xl text-gray tracking-widest font-semibold"> Gallery</h1>
-    </div>
+<div class="md:m-20 lg:mb-[10rem]">
+  <h1 class="line text-2xl lg:text-5xl md:text-3xl text-gray tracking-widest font-semibold"> Gallery</h1>
+</div>
      
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 m-4">
 
@@ -226,7 +230,7 @@
           <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art1.jpg" alt="">
       </div>
       <div>
-          <img class="h-auto max-w-full rounded-lg md:translate-y-[-2.1em] lg:translate-y-1" src="Assets/Img/Gallery/arts.jpg" alt="">
+          <img class="h-auto max-w-full rounded-lg md:translate-y-[-2.1rem] lg:translate-y-1" src="Assets/Img/Gallery/arts.jpg" alt="">
       </div>
       <div>
           <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art6.jpg" alt="">
@@ -235,213 +239,221 @@
         <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/pic4.jpg" alt="">
     </div>
   </div>
-    <div class="grid gap-4">
-      <div>
-          <img class="h-auto max-w-full rounded-lg lg:translate-y-12" src="Assets/Img/Gallery/art.webp" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art8.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg lg:translate-y-[-3em]" src="Assets/Img/Gallery/pic1.jpg" alt="">
-      </div>
-  </div>
   <div class="grid gap-4">
-      <div>
-          <img class="h-auto max-w-full rounded-lg lg:translate-y-12" src="Assets/Img/Gallery/art2.webp" alt="">
-      </div>
-      <div>
-        <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/pic2.png" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg lg:translate-y-[-3em]" src="Assets/Img/Gallery/pic3.jpg" alt="">
-      </div>
-  </div>
-  <div class="grid gap-4">
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art3.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art5.jpg" alt="">
-      </div>
-      <div>
-          <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art4.webp" alt="">
-      </div>      
-      <div class="bg-d-gray rounded-lg text-center">
-        <a href="https://github.com/jhnrysbrpn/WebDev1b2_JohnReySobrepena/pull/7">
-          <h1 class="text-l-gray md:text-[10px] lg:text-sm hover:text-g-color tracking-widest absolute translate-x-[7em] 
-           translate-y-[2.2em] lg:translate-x-[18em] lg:translate-y-[10em] md:translate-x-[9em] md:translate-y-[4em]">CALCULATOR</h1>
-          <img src="Assets/ScreenShots/calc.png" class="w-[5em] lg:w-[15em] md:w-[5em]">
-        </a>
+    <div>
+        <img class="h-auto max-w-full rounded-lg lg:translate-y-12" src="Assets/Img/Gallery/art.webp" alt="">
     </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art8.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg lg:translate-y-[-3rem]" src="Assets/Img/Gallery/pic1.jpg" alt="">
+    </div>
+</div>
+<div class="grid gap-4">
+    <div>
+        <img class="h-auto max-w-full rounded-lg lg:translate-y-12" src="Assets/Img/Gallery/art2.webp" alt="">
+    </div>
+    <div>
+      <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/pic2.png" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg lg:translate-y-[-3rem]" src="Assets/Img/Gallery/pic3.jpg" alt="">
+    </div>
+</div> <div class="grid gap-4">
+  <div>
+      <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art3.jpg" alt="">
   </div>
+  <div>
+      <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art5.jpg" alt="">
+  </div>
+  <div>
+      <img class="h-auto max-w-full rounded-lg" src="Assets/Img/Gallery/art4.webp" alt="">
+  </div>      
+  <div class="bg-d-gray rounded-lg text-center">
+    <a href="https://github.com/jhnrysbrpn/WebDev1b2_JohnReySobrepena/pull/7">
+      <h1 class="text-l-gray text-[8px] md:text-[10px] lg:text-sm hover:text-g-color tracking-widest absolute translate-x-[5.8rem] 
+       translate-y-[2.2rem] md:translate-x-[5.5rem] md:translate-y-[3rem] lg:translate-x-[18rem] lg:translate-y-[10rem]">CALCULATOR</h1>
+      <img src="Assets/ScreenShots/calc.png" class="w-[5rem] lg:w-[15rem] md:w-[5rem]">
+    </a>
+</div>
+</div>
 </div>
 
-    </div>
+</div><!-- C O N T A C T   M E -->
 
- 
-<!-- C O N T A C T   M E -->
+<div id="contactMe" class="container mx-auto m-20 h-[75rem] lg:h-[65rem] lg:translate-y-[8rem] md:h-full">
 
-    <div id="contactMe" class="container mx-auto m-20 h-[75em] lg:h-[65em] lg:translate-y-[8em] md:h-full">
+<!-- L I N E -->
 
- <!-- L I N E -->
+ <div class="lg:mb-[10rem] md:mb-20">
+   <h1 class="line text-2xl lg:text-5xl md:text-3xl text-gray tracking-widest font-semibold"> Contact Me </h1>
+ </div>
 
-     <div class="lg:mb-[10em] md:mb-20">
-       <h1 class="line text-2xl lg:text-5xl md:text-3xl text-gray tracking-widest font-semibold"> Contact Me </h1>
-     </div>
+  <section class="lg:h-screen md:h-full translate-y-[10rem] lg:translate-y-20  md:translate-y-[5rem] lg:mb-40 md:mb-40">
 
-      <section class="lg:h-screen md:h-full translate-y-[10em] lg:translate-y-20  md:translate-y-[5em] lg:mb-40 md:mb-40">
-
-        <div class="container px-6 md:px-12">
-          <div
-            class="block rounded-lg bg-[hsla(0,0%,100%,0.7)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] 
-            dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-b-g md:py-16 md:px-12 -mt-[100px] backdrop-blur-[50px]">
-            <div class="mb-12 grid h-15 gap-x-6 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-6">
-              <div class="mx-auto mb-12 text-center lg:mb-0">
-                <a href="https://www.facebook.com/jrcs023/">
-                 <img itemprop="contentUrl" src="https://www.svgrepo.com/show/473600/facebook.svg" alt="Facebook SVG File" title="Facebook SVG File" 
-                  class="w-10 bg-d-gray rounded-full p-2 ml-2 lg:ml-2 md:ml-1.5 hover:bg-gray">
-                 <p class="tracking-wides p-2t">Facebook</p>
-               </a>
-              </div>
-              <div class="mx-auto mb-12 text-center lg:mb-0">
-                <a href="https://www.instagram.com/jhnry.cs/">
-                 <img itemprop="contentUrl" src="https://www.svgrepo.com/show/521711/instagram.svg" alt="Instagram SVG File" title="Instagram SVG File"
-                  width="50" height="50" class="w-10 bg-d-gray rounded-full p-2 ml-2 lg:ml-2 md:ml-1.5 hover:bg-gray">
-                 <p class="tracking-wides p-2t">Instagram</p>
-                </a>
-              </div>
-              <div class="mx-auto mb-6 text-center md:mb-0">
-                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/404214/telephone-receiver.svg" alt="Telephone Receiver SVG File"
-                 title="Telephone Receiver SVG File" width="50" height="50" class="w-10 bg-d-gray rounded-full p-2 ml-7 lg:ml-7 md:ml-7   hover:bg-gray">
-               <p class="tracking-wider p-2">02 7341 4439</p>
-              </div>
-              <div class="mx-auto mb-6 text-center md:mb-0">
-                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/374645/email-chatter.svg" alt="Email Chatter SVG File" 
-                title="Email Chatter SVG File" width="50" height="50" class="w-10 bg-d-gray rounded-full p-2 ml-[6.2em] lg:ml-[6.5em] md:ml-[6.2em] hover:bg-gray">
-               <p class="tracking-wider p-2">sobrepenajohnrey023@gmail.com</p>
-              </div>
-              <div class="mx-auto mb-6 text-center md:mb-0">
-               <a href="https://www.linkedin.com/in/john-rey-castro-sobrepeña/">
-                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/512317/github-142.svg" alt="Github 142 SVG File" 
-                title="Github 142 SVG File" width="50" height="50" class="w-10 bg-d-gray rounded-full p-2 ml-6 lg:ml-6 md:ml-6   hover:bg-gray">
-                <p class="tracking-widest p-2">jhnrysbrpn</p>
-               </a>
-              </div>
-              <div class="mx-auto mb-6 text-center md:mb-0">
-                <a href="https://github.com/jhnrysbrpn">
-                  <img itemprop="contentUrl" src="https://www.svgrepo.com/show/25824/linked-in-logo-of-two-letters.svg" alt="Linked In Logo Of Two Letters SVG File" 
-                  title="Linked In Logo Of Two Letters SVG File" width="50" height="50"  class="w-10 bg-d-gray rounded-full p-2 ml-4 lg:ml-4 md:ml-4   hover:bg-gray">
-                 <p class="tracking-widest p-2">LinkedIn</p>
-                </a>
-               </div>
-            </div>
-            <div class="mx-auto max-w-[700px]">
-              <form>
-                <div class="relative mb-6" data-te-input-wrapper-init>
-                  <input type="text"
-                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-lg:none tra-all duration-200
-                     ease-linealg:r focus::opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none
-                      dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    id="exampleInput90" placeholder="Name" />
-                  <label
-                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all
-                     duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] 
-                     peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                    for="exampleInput90">Name
-                  </label>
-                </div>
-                <div class="relative mb-6" data-te-input-wrapper-init>
-                  <input type="email"
-                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-lg:none tra-all duration-200 ease-linealg:r 
-                   focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 
-                    dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    id="exampleInput91" placeholder="Email address" />
-                  <label
-                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 
-                    ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] 
-                    peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                    for="exampleInput91">Email address
-                  </label>
-                </div>
-                <div class="relative mb-6" data-te-input-wrapper-init>
-                  <textarea
-                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-lg:none tra-all duration-200 ease-linealg:r 
-                   focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 
-                    dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
-                  <label for="exampleFormControlTextarea1"
-                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all 
-                    duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem]
-                     peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Message</label>
-                </div>
-                <div class="mb-6 inline-lg:block mi-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
-                  <input
-                    class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid
-                     border-neutral-300 outline-lg:none bef:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full 
-                     before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary 
-                     checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] 
-                     checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid
-                     checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)]
-                     focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)]
-                     focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] 
-                     focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem]
-                     checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0
-                     checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary
-                      dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
-                    type="checkbox" value="" id="exampleCheck96" checked />
-                  <label class="inline-lg:block pl-[0.15rem] hover:cursor-pointer" for="exampleCheck96">
-                    Send me a copy of this message
-                  </label>
-                </div>
-                <button type="button" data-te-ripple-init data-te-ripple-color="light"
-                  class="inline-lg:block w- rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 
-                  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-lg:none
-                 focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),
-                  0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0">
-                  Send
-                </button>
-              </form>
-            </div>
+    <div class="container px-6 md:px-12">
+      <div
+        class="block rounded-lg bg-[hsla(0,0%,100%,0.7)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] 
+        dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-b-g md:py-16 md:px-12 -mt-[100px] backdrop-blur-[50px]">
+        <div class="mb-12 grid h-15 gap-x-6 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-6">
+          <div class="mx-auto mb-12 text-center lg:mb-0">
+            <a href="https://www.facebook.com/jrcs023/">
+             <img itemprop="contentUrl" src="https://www.svgrepo.com/show/473600/facebook.svg" alt="Facebook SVG File" title="Facebook SVG File" 
+              class="w-10 bg-d-gray rounded-full p-2 ml-2 lg:ml-2 md:ml-1.5 hover:bg-gray translate-x-1">
+             <p class="tracking-wides p-2t">Facebook</p>
+           </a>
           </div>
-        </div>
-      </section>
-      <!-- Section: Design Block -->
-    </div>
-
-  </section>
- 
-   <footer>
-    <div class="footercontainer">
-      <div class="socialicons">
-        <a href="https://www.facebook.com/jrcs023/">
-         <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/jhnry.cs/">
-         <i class="fab fa-instagram"></i>
-        </a>
-       <a href="https://www.linkedin.com/in/john-rey-castro-sobrepeña/">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-       <a href="https://github.com/jhnrysbrpn">
-         <i class="fa-brands fa-github"></i>
-       </a>
+          <div class="mx-auto mb-12 text-center lg:mb-0">
+            <a href="https://www.instagram.com/jhnry.cs/">
+             <img itemprop="contentUrl" src="https://www.svgrepo.com/show/521711/instagram.svg" alt="Instagram SVG File" title="Instagram SVG File"
+              width="50" height="50" class="w-10 bg-d-gray rounded-full p-2 ml-2 lg:ml-2 md:ml-1.5 hover:bg-gray translate-x-1">
+             <p class="tracking-wides p-2t">Instagram</p>
+            </a>
+          </div>
+          <div class="mx-auto mb-6 text-center md:mb-0">
+            <img itemprop="contentUrl" src="https://www.svgrepo.com/show/404214/telephone-receiver.svg" alt="Telephone Receiver SVG File"
+             title="Telephone Receiver SVG File" width="50" height="50" class="w-10 bg-d-gray rounded-full p-2 ml-7 lg:ml-7 md:ml-7 hover:bg-gray translate-x-2">
+           <p class="tracking-wider p-2">02 7341 4439</p>
+          </div>
+           <div class="mx-auto mb-6 text-center md:mb-0">
+            <img itemprop="contentUrl" src="https://www.svgrepo.com/show/374645/email-chatter.svg" alt="Email Chatter SVG File" 
+            title="Email Chatter SVG File" width="50" height="50" class="w-10 bg-d-gray rounded-full p-2 ml-[6.2rem] lg:ml-[6.5rem] md:ml-[6.2rem] hover:bg-gray translate-x-2">
+           <p class="tracking-wider p-2">sobrepenajohnrey023@gmail.com</p>
+          </div>
+          <div class="mx-auto mb-6 text-center md:mb-0">
+           <a href="https://www.linkedin.com/in/john-rey-castro-sobrepeña/">
+            <img itemprop="contentUrl" src="https://www.svgrepo.com/show/512317/github-142.svg" alt="Github 142 SVG File" 
+            title="Github 142 SVG File" width="50" height="50" class="w-10 bg-d-gray rounded-full p-2 ml-6 lg:ml-6 md:ml-6 hover:bg-gray translate-x-2">
+            <p class="tracking-widest p-2">jhnrysbrpn</p>
+           </a>
+          </div>
+          <div class="mx-auto mb-6 text-center md:mb-0">
+            <a href="https://github.com/jhnrysbrpn">
+              <img itemprop="contentUrl" src="https://www.svgrepo.com/show/25824/linked-in-logo-of-two-letters.svg" alt="Linked In Logo Of Two Letters SVG File" 
+              title="Linked In Logo Of Two Letters SVG File" width="50" height="50"  class="w-10 bg-d-gray rounded-full p-2 ml-4 lg:ml-4 md:ml-4 hover:bg-gray translate-x-2">
+             <p class="tracking-widest p-2">LinkedIn</p>
+            </a>
+           </div>
+        </div> <div class="mx-auto max-w-[700px]">
+          <form>
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <input type="text"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rrem] px-3 leading-[1.6] outline-lg:none tra-all duration-200
+                 ease-linealg:r focus::opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none
+                  dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="exampleInput90" placeholder="Name" />
+              <label
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rrem] leading-[1.6] text-neutral-500 transition-all
+                 duration-200 ease-out peer-focus:-translate-y-[0.9rrem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rrem] 
+                 peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                for="exampleInput90">Name
+              </label>
+            </div> 
+             <div class="relative mb-6" data-te-input-wrapper-init>
+              <input type="email"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rrem] px-3 leading-[1.6] outline-lg:none tra-all duration-200 ease-linealg:r 
+               focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 
+                dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="exampleInput91" placeholder="Email address" />
+              <label
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rrem] leading-[1.6] text-neutral-500 transition-all duration-200 
+                ease-out peer-focus:-translate-y-[0.9rrem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rrem] 
+                peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                for="exampleInput91">Email address
+              </label>
+            </div>        
+             <div class="relative mb-6" data-te-input-wrapper-init>
+              <textarea
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rrem] px-3 leading-[1.6] outline-lg:none tra-all duration-200 ease-linealg:r 
+               focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 
+                dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
+              <label for="exampleFormControlTextarea1"
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rrem] leading-[1.6] text-neutral-500 transition-all 
+                duration-200 ease-out peer-focus:-translate-y-[0.9rrem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rrem]
+                 peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Message</label>
+            </div> 
+            <div class="mb-6 inline-lg:block mi-h-[1.5rrem] justify-center pl-[1.5rrem] md:flex">
+              <input
+                class="relative float-left mt-[0.15rrem] mr-[6px] -ml-[1.5rrem] h-[1.125rrem] w-[1.125rrem] appearance-none rounded-[0.25rrem] border-[0.125rrem] border-solid
+                 border-neutral-300 outline-lg:none bef:pointer-events-none before:absolute before:h-[0.875rrem] before:w-[0.875rrem] before:scale-0 before:rounded-full 
+                 before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary 
+                 checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rrem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rrem] 
+                 checked:after:w-[0.375rrem] checked:after:rotate-45 checked:after:border-[0.125rrem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid
+                 checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)]
+                 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)]
+                 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rrem] focus:after:w-[0.875rrem] focus:after:rounded-[0.125rrem] 
+                 focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rrem]
+                 checked:focus:after:-mt-px checked:focus:after:h-[0.8125rrem] checked:focus:after:w-[0.375rrem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rrem] checked:focus:after:border-t-0
+                 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary
+                  dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                type="checkbox" value="" id="exampleCheck96" checked />
+              <label class="inline-lg:block pl-[0.15rrem] hover:cursor-pointer" for="exampleCheck96">
+                Send me a copy of this message
+              </label>
+            </div>   <button type="button" data-te-ripple-init data-te-ripple-color="light"
+            class="inline-lg:block w- rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 
+            hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-lg:none
+           focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),
+            0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] lg:mb-0">
+            Send
+          </button>
+        </form>
       </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+</div>
 
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#aboutMe">About Me</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contactMe">Contact Me</a></li>
-      </ul>
+</section> 
 
-      <p>Privacy and Cookie Policy | Web Terms of Use | Accessibility </p>
+<footer class="w-full h-1/2 lg:h-[32vh] p-8 mx-auto bg-gradient-to-b from-[#0a1f1b] to-[#061210] text-center items-center box-border">
+   <div class="socialicons">
+      <a href="">
+       <i class="icons fab fa-facebook-f"></i>
+      </a>
+      <a href="">
+       <i class="icons fab fa-instagram"></i>
+      </a>
+     <a href="">
+      <i class="icons fa-brands fa-linkedin"></i>
+    </a>
+     <a href="">
+       <i class="icons fa-brands fa-github"></i>
+     </a>
 
-      <p>Copyright &copy; 2023 Designed by <header class="md:designer lg:6xl">
-        John</header> All Rights Reserved.</p>
-     </div>
-  </footer>
+    <ul class="flex flex-col mx-auto my-12 lg:w-1/2 justify-between md:justify-evenly">
+      <li>
+        <a href="#home" class="fNavi">Home</a>
+      </li>
+      <li>
+        <a href="#about" class="fNavi">About Me</a>
+      </li>
+      <li>
+        <a href="#skills" class="fNavi">Skills</a>
+      </li>
+      <li>
+        <a href="#gallery" class="fNavi">Gallery</a>
+      </li>
+      <li>
+        <a href="#contactMe" class="fNavi">Contact Me</a>
+      </li>
+      <li>
+        <a href="../Files/MyRESUME.pdf" download="Resume" class="fNavi">Resume</a>
+      </li>
+    </ul>
+   </div>
+  
+  <div class="flex flex-col grid-cols-2 lg:w-1/2 mx-auto text-xs tracking-widest">
+  <p>Privacy and Cookie Policy | Web Terms of Use | Accessibility </p>
+
+  <p class="p-8">Copyright &copy; 2023 Designed by 
+    <span class="designer lg:text-xl font-semibold"> John </span> All Rights Reserved.</p>
+ </div>
+
+</footer>
 
 </body>
-<script defer src="Assets/JavaScript/Portfolio.js"></script>
 </html>
