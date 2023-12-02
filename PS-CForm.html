@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+  <title>PsychConnect</title>
+  <link rel="stylesheet" type="text/css" href="Assets/Css/PsychConnect.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/96e8d283a5.js" 
+  crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .navi {
+        @apply p-2 mx-4 relative text-black text-sm md:text-sm font-bold uppercase tracking-[3px] leading-10 font-semibold hover:text-d-brown
+      }
+      .navi::before {
+        @apply content-[''] bg-d-gray h-[1px]  w-[0%] top-0 left-0 absolute duration-300 ease-in-out
+      }
+      .navi:hover::before {
+        @apply w-[100%] opacity-100 
+      }
+      .navi::after {
+        @apply content-[''] bg-d-gray h-[1px] w-[0%] bottom-0 right-0 absolute duration-300 ease-in-out
+      }
+      .navi:hover::after {
+        @apply w-[100%] opacity-100 
+      }
+      .icons {
+          @apply w-8  m-4  text-lg md:w-16 md:text-3xl md:p-4 lg:w-12 lg:text-xl lg:p-2 rounded-full bg-white text-d-gray font-bold
+      }
+      .icons:hover {
+          @apply bg-d-gray text-l-gray
+      }
+      .fNavi {
+          @apply text-lg md:text-3xl lg:text-2xl text-d-gray font-bold
+      }
+      .fNavi:hover {
+          @apply text-black
+      }
+    }
+  </style>
+
+<script>
+  tailwind.config = {
+    theme: {
+      colors: {
+        'gray' : '#999999',
+        'white' : '#fff',
+        's-white' : '#ededed',
+        'b-white' : '#e8ddd3',
+        'brown' : '#b0855a',
+        'l-brown' : '#e3bb9d',
+        'd-brown' : '#7d5228',
+        'black' : '#111',
+        'l-gray' : '#e3e3e3',
+        'd-gray' : '#5c5c5c',
+        'c-gray' : 'rgba(187, 189, 189, 0.3)',
+      },
+    }
+  }
+</script>
+
+<body class="flex w-full h-full m-0 p-0 font-[Garamond]">
+  <div class="background">
+
+    <nav class="w-full bg-b-white shadow md:flex md:items-center md:justify-between z-10 fixed">
+      <div class="flex justify-between items-center">
+        <img src="Assets/Img/DT.png" class="w-16 m-2 p-1 bg-d-gray inline cursor-pointer rounded-full animate-pulse">
+
+        <span class="text-3xl cursor-pointer mx-4 md:hidden block">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+       </div>
+
+
+        <ul class="md:flex mr-16 md:static absolute bg-b-white z-[-1] md:z-auto w-full md:w-auto 
+        md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in 
+        duration-500 md:items-center gap-[3vw]">
+          <li>
+            <a href="PsychConnect.html" class="navi">Home</a>
+          </li>
+          <li>
+            <a href="#" class="navi">Services</a>
+          </li>
+          <li>
+            <a href="#" class="navi">Members</a>
+          </li>
+          <li>
+            <a href="#" class="navi">Contact Us</a>
+          </li>
+        </ul>
+
+    </nav>
+
+    <div class="h-full md:h-screen container mx-auto">
+      <section class="container mx-auto md:mb-40 lg:mb-40 translate-y-[8em] md:translate-y-[10rem] lg:translate-y-1/3">
+          <div
+            class="block rounded-lg bg-brown backdrop-blur-[50px] p-16">
+            <div class="mb-12 grid h-15 gap-x-6 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4">
+              <div class="mx-auto mb-12 text-center lg:mb-0">
+                <a href="">
+                 <img itemprop="contentUrl" src="https://www.svgrepo.com/show/473600/facebook.svg" alt="Facebook SVG File" title="Facebook SVG File" 
+                  class="w-10 bg-d-brown  rounded-full p-2 ml-2.5 md:ml-1.7 lg:ml-2  hover:bg-l-brown">
+                 <p class="tracking-wides p-2t">Facebook</p>
+               </a>
+              </div>
+              <div class="mx-auto mb-12 text-center lg:mb-0">
+                <a href="">
+                 <img itemprop="contentUrl" src="https://www.svgrepo.com/show/521711/instagram.svg" alt="Instagram SVG File" title="Instagram SVG File"
+                  width="50" height="50" class="w-10 bg-d-brown rounded-full p-2 ml-2.5  md:ml-2.5 lg:ml-2 hover:bg-l-brown">
+                 <p class="tracking-wides p-2t">Instagram</p>
+                </a>
+              </div>
+              <div class="mx-auto mb-6 text-center md:mb-0">
+                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/404214/telephone-receiver.svg" alt="Telephone Receiver SVG File"
+                 title="Telephone Receiver SVG File" width="50" height="50" class="w-10 bg-d-brown rounded-full p-2 ml-[2rem] md:ml-9  hover:bg-l-brown">
+               <p class="tracking-wider p-2">telephone</p>
+              </div>
+              <div class="mx-auto mb-6 text-center md:mb-0">
+                <img itemprop="contentUrl" src="https://www.svgrepo.com/show/374645/email-chatter.svg" alt="Email Chatter SVG File" 
+                title="Email Chatter SVG File" width="50" height="50" class="w-10 bg-d-brown rounded-full p-2 ml-[6.5rem] md:ml-[6.5rem] lg:ml-[6.5em]  hover:bg-l-brown">
+               <p class="tracking-wider p-2">Email</p>
+              </div>
+         
+            </div>
+            <div class="mx-auto max-w-[700px]">
+              <form>
+                <div class="relative mb-6" data-te-input-wrapper-init>
+                  <input type="text"
+                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-lg:none tra-all duration-200
+                     ease-linealg:r focus::opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none
+                      dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    id="exampleInput90" placeholder="Name" />
+                  <label
+                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all
+                     duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] 
+                     peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                    for="exampleInput90">Name
+                  </label>
+                </div>
+                <div class="relative mb-6" data-te-input-wrapper-init>
+                  <input type="email"
+                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-lg:none tra-all duration-200 ease-linealg:r 
+                   focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 
+                    dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    id="exampleInput91" placeholder="Email address" />
+                  <label
+                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 
+                    ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] 
+                    peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                    for="exampleInput91">Email address
+                  </label>
+                </div>
+                <div class="relative mb-6" data-te-input-wrapper-init>
+                  <textarea
+                    class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-lg:none tra-all duration-200 ease-linealg:r 
+                   focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 
+                    dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
+                  <label for="exampleFormControlTextarea1"
+                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all 
+                    duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem]
+                     peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Message</label>
+                </div>
+                <div class="mb-6 inline-lg:block mi-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
+                  <input
+                    class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid
+                     border-neutral-300 outline-lg:none bef:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full 
+                     before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary 
+                     checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] 
+                     checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid
+                     checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)]
+                     focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)]
+                     focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] 
+                     focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem]
+                     checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0
+                     checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent dark:border-neutral-600 dark:checked:border-primary dark:checked:bg-primary
+                      dark:focus:before:shadow-[0px_0px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca]"
+                    type="checkbox" value="" id="exampleCheck96" checked />
+                  <label class="inline-lg:block pl-[0.15rem] hover:cursor-pointer" for="exampleCheck96">
+                    Send me a copy of this message
+                  </label>
+                </div>
+                <button type="button" data-te-ripple-init data-te-ripple-color="light"
+                  class="inline-lg:block rounded bg-d-brown px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-lg shadow-l-brown transition duration-150 ease-in-out hover:bg-l-brown 
+                  hover:shadow-lg hover:shadow-d-brown focus:outline-lg:none">
+                  Send
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <footer>
+      <div class="h-[20vh] p-8 bg-b-white text-center items-center box-border">
+        <div class="socialicons">
+          <a href="">
+           <i class="icons fab fa-facebook-f"></i>
+          </a>
+          <a href="">
+           <i class="icons fab fa-instagram"></i>
+          </a>
+         <a href="">
+          <i class="icons fa-brands fa-linkedin"></i>
+        </a>
+         <a href="">
+           <i class="icons fa-brands fa-github"></i>
+         </a>
+        </div>
+
+        <ul class="flex mx-auto lg:w-1/2 justify-between md:justify-evenly lg:justify-evenly">
+          <li>
+            <a href="PsychConnect.html" class="fNavi">Home</a>
+          </li>
+          <li>
+            <a href="" class="fNavi">About</a>
+          </li>
+          <li>
+            <a href="" class="fNavi">Services</a>
+          </li>
+          <li>
+            <a href="PS-CForm.html" class="fNavi">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+</body>
+<script src="Assets/JavaScript/PsychConnect.js"></script>
+</html>
