@@ -3,26 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>New Year Countdown</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" type="text/css" href="">
 
 <style type="text/tailwindcss">
 
-@font-face { 
-   font-family : 'courgette';
-   src: url(Assets/Styles/Courgette/Courgette-Regular.ttf);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Lobster+Two:ital@1&display=swap');
-
   @layer utilities {
     .container {
-      @apply backdrop-blur text-center m-8 shadow-md shadow-[#0e9aeb]
+      @apply m-2 w-[4.5rem] h-20 md:m-4 md:w-28 md:h-24 lg:m-8 lg:w-32 lg:h-32 font-extrabold tracking-widest backdrop-blur text-center rounded-lg shadow-lg shadow-[#0e9aeb]
     }
     .time {
-      @apply flex flex-wrap p-10
+      @apply pt-4 md:pt-5 md:text-3xl lg:text-6xl 
     }
+    .text {
+      @apply text-[10px] md:text-xs lg:text-sm uppercase 
+    } 
   }
 
 </style>
@@ -42,30 +38,30 @@
 <body style="background-image: url(/Assets/Img/BG/wallhaven.jpg); background-size: cover; width: 100vw;" 
  class="w-screen h-screen flex text-white font-[Garamond] box-border justify-center items-center">
 
- <div class="w-1/2 h-1/2 items-center justify-center flex flex-col">
+ <div class="w-full h-full items-center justify-center flex flex-col">
 
-  <h1 class="text-2xl pb-16 ">New Year Countdown</h1>
+  <h1 class="text-xl pb-8 md:text-3xl lg:text-4xl lg:pb-16 ">New Year Countdown</h1>
 
   <div id="countdown" class="countdown flex">
 
     <div class="container">
-    <h2 id="days" class="time">00</h2>
-    <small>days</small>
+    <h1 id="days" class="time day">00</h1>
+    <small class="text">Days</small>
     </div>
     
     <div class="container">
-      <h2 id="hours" class="time">00</h2>
-      <small>Hours</small>
+      <h1 id="hours" class="time hour">00</h1>
+      <small class="text">Hours</small>
     </div>
 
     <div class="container">
-      <h2 id="minutes" class="time">00</h2>
-      <small>Minutes</small>
+      <h1 id="minutes" class="time minute">00</h1>
+      <small class="text">Minutes</small>
     </div>
 
     <div class="container">
-      <h2 id="seconds" class="time">00</h2>
-      <small>Seconds</small>
+      <h1 id="seconds" class="time second">00</h1>
+      <small class="text">Seconds</small>
     </div>
 
   </div>
