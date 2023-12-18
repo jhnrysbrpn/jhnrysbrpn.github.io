@@ -18,7 +18,7 @@ var x = setInterval(function() {
 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "<h1>Happy New Year!</h1>";
+    document.getElementById("countdown").innerHTML = "<h1>Merry Christmas!</h1>";
   }
 }, 1000);
 
