@@ -1,4 +1,4 @@
-var countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+var countDownDate = new Date("dec 25, 2023 00:00:00").getTime();
 
 var x = setInterval(function() {
 
@@ -19,6 +19,16 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "<h1>Happy New Year!</h1>";
+  }
+
+	if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "<h1>&#127879; &#127878; Happy New Year &#127878; &#127879; </h1>";
+
+      countdown.style.fontSize = '5vw';
+      countdown.style.fontWeight = '900';
+      countdown.style.textShadow = '3px 3px 12px #06aff';
+
   }
 }, 1000);
 
