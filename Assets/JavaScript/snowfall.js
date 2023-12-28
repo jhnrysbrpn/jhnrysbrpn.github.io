@@ -1,61 +1,36 @@
-var countDownDate = new Date("Dec 25, 2023 00:00:00").getTime();
-
-var x = setInterval(function() {
-
-  var now = new Date().getTime();
-
-  var distance = countDownDate - now;
-
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-  document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-  document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-  document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "<h1>&#127873; &#x1F384; &#129511; Merry Christmas &#129511; &#x1F384; &#127873;</h1>";
-
-      countdown.style.fontSize = '5vw';
-      countdown.style.fontWeight = '900';
-      countdown.style.textShadow = '3px 3px 12px #01245c';
-
-  }
-}, 1000);
-
 var snowStorm = null;
 
 function SnowStorm() {
 
   // --- PROPERTIES ---
 
-  this.flakesMax = 128;          
-  this.flakesMaxActive = 64;      
-  this.animationInterval = 33;    
-  this.flakeBottom = null;       
-  this.targetElement = null;     
-  this.followMouse = true;        
-  this.snowColor = '#fff';       
-  this.snowCharacter = '&bull;';  
-  this.snowStick = true;         
-  this.useMeltEffect = true;      
-  this.useTwinkleEffect = false;  
-  this.usePositionFixed = false; 
+  this.flakesMax = 128;           // Limit total amount of snow made (falling + sticking)
+  this.flakesMaxActive = 64;      // Limit amount of snow falling at once (less = lower CPU use)
+  this.animationInterval = 33;    // Theoretical "miliseconds per frame" measurement. 20 = fast + smooth, but high CPU use. 50 = more conservative, but slower
+  this.flakeBottom = null;        // Integer for Y axis snow limit, 0 or null for "full-screen" snow effect
+  this.targetElement = null;      // element which snow will be appended to (document body if null/undefined) - can be an element ID string, or a DOM node reference
+  this.followMouse = true;        // Snow will change movement with the user's mouse
+  this.snowColor = '#fff';        // Don't eat (or use?) yellow snow.
+  this.snowCharacter = '&bull;';  // &bull; = bullet, &middot; is square on some systems etc.
+  this.snowStick = true;          // Whether or not snow should "stick" at the bottom. When off, will never collect.
+  this.useMeltEffect = true;      // When recycling fallen snow (or rarely, when falling), have it "melt" and fade out if browser supports it
+  this.useTwinkleEffect = false;  // Allow snow to randomly "flicker" in and out of view while falling
+  this.usePositionFixed = false;  // true = snow not affected by window scroll. may increase CPU load, disabled by default - if enabled, used only where supported
 
+  // --- less-used bits ---
 
+  this.flakeLeftOffset = 0;       // amount to subtract from edges of container
+  this.flakeRightOffset = 0;      // amount to subtract from edges of container
+  this.flakeWidth = 3;            // max pixel width for snow element
+  this.flakeHeight = 3;           // max pixel height for snow element
+  this.vMaxX = 5;                 // Maximum X velocity range for snow
+  this.vMaxY = 4;                 // Maximum Y velocity range
+  this.zIndex = 0;                // CSS stacking order applied to each snowflake
 
-  this.flakeLeftOffset = 0;   
-  this.flakeRightOffset = 0;  
-  this.flakeWidth = 3;       
-  this.flakeHeight = 3;          
-  this.vMaxX = 5;               
-  this.vMaxY = 4;               
-  this.zIndex = 0;              
+  // --- End of user section ---
 
+  // jslint global declarations
+  /*global window, document, navigator, clearInterval, setInterval */
 
   var addEvent = (typeof(window.attachEvent)=='undefined'?function(o,evtName,evtHandler) {
 	return o.addEventListener(evtName,evtHandler,false);
@@ -139,10 +114,10 @@ function SnowStorm() {
   };
 
   this.scrollHandler = function() {
-
+    // "attach" snowflakes to bottom of window if no absolute bottom value was given
     scrollY = (s.flakeBottom?0:parseInt(window.scrollY||document.documentElement.scrollTop||document.body.scrollTop,10));
     if (isNaN(scrollY)) {
-	  scrollY = 0;
+	  scrollY = 0; // Netscape 6 scroll fix
 	}
     if (!fixedForEverything && !s.flakeBottom && s.flakes) {
       for (var i=s.flakes.length; i--;) {
@@ -171,7 +146,7 @@ function SnowStorm() {
   };
 
   this.freeze = function() {
-
+    // pause animation
     if (!s.disabled) {
       s.disabled = 1;
     } else {
@@ -193,7 +168,7 @@ function SnowStorm() {
 
   this.toggleSnow = function() {
     if (!s.flakes.length) {
-
+      // first run
       s.start();
     } else {
       s.active = !s.active;
@@ -234,7 +209,7 @@ function SnowStorm() {
     this.y = (!isNaN(y)?y:-rnd(screenY)-12);
     this.vX = null;
     this.vY = null;
-    this.vAmpTypes = [1,1.2,1.4,1.6,1.8]; 
+    this.vAmpTypes = [1,1.2,1.4,1.6,1.8]; // "amplification" for vX/vY (based on flake size/type)
     this.vAmp = this.vAmpTypes[this.type];
     this.melting = false;
     this.meltFrameCount = storm.meltFrameCount;
@@ -293,10 +268,10 @@ function SnowStorm() {
       var vX = s.vX*windOffset;
       s.x += vX;
       s.y += (s.vY*s.vAmp);
-      if (s.x >= screenX || screenX-s.x < storm.flakeWidth) { 
+      if (s.x >= screenX || screenX-s.x < storm.flakeWidth) { // X-axis scroll check
         s.x = 0;
       } else if (vX < 0 && s.x-storm.flakeLeftOffset<0-storm.flakeWidth) {
-        s.x = screenX-storm.flakeWidth-1;
+        s.x = screenX-storm.flakeWidth-1; // flakeWidth;
       }
       s.refresh();
       var yDiff = screenY+scrollY-s.y;
@@ -309,10 +284,11 @@ function SnowStorm() {
 	    }
       } else {
 	    if (storm.useMeltEffect && s.active && s.type < 3 && !s.melting && Math.random()>0.998) {
-
+	      // ~1/1000 chance of melting mid-air, with each frame
 	      s.melting = true;
 	      s.melt();
-
+	      // only incrementally melt one frame
+	      // s.melting = false;
 	    }
 	    if (storm.useTwinkleEffect) {
 		  if (!s.twinkleFrame) {
@@ -328,6 +304,8 @@ function SnowStorm() {
     };
 
     this.animate = function() {
+      // main animation loop
+      // move, check status, die etc.
       s.move();
     };
 
@@ -380,7 +358,7 @@ function SnowStorm() {
       s.active = 1;
     };
 
-    this.recycle(); 
+    this.recycle(); // set up x/y coords etc.
     this.refresh();
 
   };
@@ -440,7 +418,7 @@ function SnowStorm() {
 
   this.init = function() {
     s.randomizeWind();
-    s.createSnow(s.flakesMax); 
+    s.createSnow(s.flakesMax); // create initial batch
     addEvent(window,'resize',s.resizeHandler);
     addEvent(window,'scroll',s.scrollHandler);
     if (!isOldIE) {
@@ -462,7 +440,7 @@ function SnowStorm() {
 	if (!didInit) {
 	  didInit = true;
 	} else if (bFromOnLoad) {
-
+	  // already loaded and running
 	  return true;
 	}
     if (typeof s.targetElement == 'string') {
@@ -476,10 +454,10 @@ function SnowStorm() {
 	  s.targetElement = (!isIE?(document.documentElement?document.documentElement:document.body):document.body);
 	}
     if (s.targetElement != document.documentElement && s.targetElement != document.body) {
-	  s.resizeHandler = s.resizeHandlerAlt; 
+	  s.resizeHandler = s.resizeHandlerAlt; // re-map handler to get element instead of screen dimensions
 	}
-    s.resizeHandler(); 
-    s.usePositionFixed = (s.usePositionFixed && !noFixed); 
+    s.resizeHandler(); // get bounding box elements
+    s.usePositionFixed = (s.usePositionFixed && !noFixed); // whether or not position:fixed is supported
     fixedForEverything = s.usePositionFixed;
     if (screenX && screenY && !s.disabled) {
       s.init();
@@ -492,6 +470,7 @@ function SnowStorm() {
   }
 
   if (document.addEventListener) {
+    // safari 3.0.4 doesn't do DOMContentLoaded, maybe others - use a fallback to be safe.
     document.addEventListener('DOMContentLoaded',doStart,false);
     window.addEventListener('load',doStart,false);
   } else {
