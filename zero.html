@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero</title>
+  <script src="https:/cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer Utilities {
+      body {
+        background: radial-gradient(#087ca0, #02415a) no-repeat;
+      }
+      nav {
+        @apply flex w-full h-14 pt-4 pr-8 text-white justify-end fixed
+         }
+    .navi {
+      @apply flex inline-flex p-2
+    }
+    .navi::hover {
+      
+    }
+    }
+  </style>
+
+</head>
+<body class="w-full h-screen items-center justify-center ">
+  
+  <nav>
+    <ul>
+      <li class="navi"><a href="">Home</a></li>
+      <li class="navi"><a href="">About Us</a></li>
+      <li class="navi"><a href="">Team</a></li>
+      <li class="navi"><a href="">Services</a></li>
+      <li class="navi"><a href="">Contact Us</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>
