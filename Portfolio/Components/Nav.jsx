@@ -1,59 +1,28 @@
-import { useState } from "react";
 import { Link } from "react-scroll";
-
-const nav = () => {
-    const [click, setClick] = useState(false);
-    const content = <>
-       <div>
-          <ul>
-            <Link spy={true} smooth={true}    to="Home">
-              <li>Home </li>
-            </Link>
-            <Link spy={true} smooth={true}    to="About">
-              <li>About </li>
-            </Link>
-            <Link spy={true} smooth={true}    to="Skills">
-              <li>Skills </li>
-            </Link>
-            <Link spy={true} smooth={true}    to="Services">
-              <li>Services </li>
-            </Link>
-            <Link spy={true} smooth={true}    to="Contact">
-              <li>Contact </li>
-            </Link>
-          </ul>
-        </div>
-   </>
-
+const Nav = () => {
   return (
-
-   <nav>
     <div>
+
       <ul>
-        <Link spy={true} smooth={true} to="Home">
-             <li>Home </li>
-        </Link>
-        <Link spy={true} smooth={true} to="About">
-             <li>About </li>
-        </Link>
-        <Link spy={true} smooth={true} to="Skills">
-             <li>Skills </li>
-        </Link>
-        <Link spy={true} smooth={true} to="Services">
-             <li>Services </li>
-        </Link>
-        <Link spy={true} smooth={true} to="Contact">
-             <li>Contact </li>
-        </Link>
+        <li>
+        <Link  smooth={true}>Home </Link>
+        </li>
+         <li>
+        <Link  smooth={true}>Services </Link>
+        </li>
+        <li>
+        <Link  smooth={true}>About me </Link>
+        </li>
+        <li>
+        <Link  smooth={true}>Contact </Link>
+        </li>
+        <li>
+        <Link  smooth={true}>Resume </Link>
+        </li>
       </ul>
+
     </div>
-    <div>
-      {click && content}
-    </div>
+  )
+}
 
-
-   </nav>
-  );
-};
-
-export default nav;
+export default Nav
