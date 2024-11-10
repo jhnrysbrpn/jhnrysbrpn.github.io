@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+     body {
+              font-family: 'Roboto', sans-serif;
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+          .header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 10px 20px;
+              background-color: white;
+              border-bottom: 1px solid #e0e0e0;
+          }
+          .header .logo {
+              font-size: 24px;
+              font-weight: 700;
+              color: #e60000;
+          }
+          .header nav a {
+              margin: 0 15px;
+              text-decoration: none;
+              color: #4d4d4d;
+              font-weight: 500;
+          }
+          .header .cta-buttons {
+              display: flex;
+              align-items: center;
+          }
+          .header .cta-buttons .btn {
+              margin-left: 15px;
+              padding: 10px 20px;
+              border: 1px solid #e0e0e0;
+              border-radius: 20px;
+              text-decoration: none;
+              color: #333;
+              font-weight: 500;
+          }
+          .header .cta-buttons .btn.green {
+              background-color: #00a651;
+              color: white;
+          }
+          .main-banner {
+              background-color: #e60000;
+              color: white;
+              text-align: center;
+              padding: 40px 20px;
+              position: relative;
+          }
+          .main-banner .banner-content {
+              max-width: 800px;
+              margin: 0 auto;
+          }
+          .main-banner .banner-content h1 {
+              font-size: 36px;
+              margin: 0 0 20px;
+          }
+          .main-banner .banner-content .btn {
+              background-color: #00a651;
+              color: white;
+              padding: 10px 20px;
+              border-radius: 20px;
+              text-decoration: none;
+              font-weight: 500;
+          }
+          .main-banner .banner-image {
+              position: absolute;
+              right: 20px;
+              bottom: 20px;
+              width: 200px;
+          }
+          .main-banner .carousel-controls {
+              position: absolute;
+              top: 50%;
+              left: 10px;
+              right: 10px;
+              display: flex;
+              justify-content: space-between;
+              transform: translateY(-50%);
+          }
+          .main-banner .carousel-controls .control {
+              background-color: white;
+              border: none;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+          }
+          .services {
+              display: flex;
+              justify-content: space-around;
+              padding: 20px 0;
+              background-color: #f9f9f9;
+          }
+          .services .service {
+              text-align: center;
+              padding: 20px;
+              background-color: white;
+              border-radius: 10px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              width: 150px;
+          }
+          .services .service img {
+              width: 50px;
+              height: 50px;
+              margin-bottom: 10px;
+          }
+          .why-choose {
+              padding: 40px 20px;
+              background-color: #e0f7fa;
+              text-align: center;
+          }
+          .why-choose h2 {
+              font-size: 24px;
+              margin-bottom: 20px;
+          }
+          .why-choose .features {
+              display: flex;
+              justify-content: center;
+              flex-wrap: wrap;
+          }
+          .why-choose .features .feature {
+              width: 200px;
+              text-align: left;
+              margin: 10px;
+          }
+          .why-choose .features .feature i {
+              color: #00a651;
+              margin-right: 10px;
+          }
+          .chat-button {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              background-color: #e60000;
+              color: white;
+              padding: 10px 20px;
+              border-radius: 20px;
+              text-decoration: none;
+              font-weight: 500;
+          }
+          .feedback-button {
+              position: fixed;
+              top: 50%;
+              right: 0;
+              background-color: #00a651;
+              color: white;
+              padding: 10px 20px;
+              border-radius: 20px 0 0 20px;
+              text-decoration: none;
+              font-weight: 500;
+              transform: translateY(-50%);
+          }
+    </style>
+   </head>
+   <body>
+    <header class="header">
+     <div class="logo">
+      HOME CREDIT
+     </div>
+     <nav>
+      <a href="#">
+       Home
+      </a>
+      <a href="#">
+       Loans &amp; Services
+      </a>
+      <a href="#">
+       Shop
+      </a>
+      <a href="#">
+       Promos
+      </a>
+      <a href="#">
+       Blog
+      </a>
+      <a href="#">
+       About Us
+      </a>
+      <a href="#">
+       Help Center
+      </a>
+     </nav>
+     <div class="cta-buttons">
+      <a class="btn green" href="#">
+       Get the Home Credit App
+      </a>
+      <a class="btn" href="#">
+       Account
+       <i class="fas fa-chevron-down">
+       </i>
+      </a>
+     </div>
+    </header>
+    <section class="main-banner">
+     <div class="banner-content">
+      <h1>
+       Take this home for as low as P86/day for 24 months
+      </h1>
+      <a class="btn" href="#">
+       Get in Installments
+      </a>
+     </div>
+     <img alt="iPhone 16 Pro" class="banner-image" height="100" src="https://storage.googleapis.com/a1aa/image/rOLvtEcsuVLIIF4QDvVvaBYmSkebfFe276LVoeCBJ4e2MtndC.jpg" width="200"/>
+     <div class="carousel-controls">
+      <button class="control">
+       <i class="fas fa-chevron-left">
+       </i>
+      </button>
+      <button class="control">
+       <i class="fas fa-chevron-right">
+       </i>
+      </button>
+     </div>
+    </section>
+    <section class="services">
+     <div class="service">
+      <img alt="Cash Loan" height="50" src="https://storage.googleapis.com/a1aa/image/rBIzKBd2RGorOFAM2TZ85uaULj5wVJ1b2ELVYUuSjVNYaP7E.jpg" width="50"/>
+      <p>
+       Cash Loan
+      </p>
+     </div>
+     <div class="service">
+      <img alt="Shoppingmall.ph" height="50" src="https://storage.googleapis.com/a1aa/image/vtq7eu6JoZ3JKC62HKWZMuwenKvgKh9mCzOZeJ20ZrpFT7ZnA.jpg" width="50"/>
+      <p>
+       Shoppingmall.ph
+      </p>
+     </div>
+     <div class="service">
+      <img alt="Sign Contract" height="50" src="https://storage.googleapis.com/a1aa/image/ZVVoX6Mo1GJcKJByRZx9EhH5CEbXnsFf5S0CDZkahjzy0esTA.jpg" width="50"/>
+      <p>
+       Sign Contract
+      </p>
+     </div>
+     <div class="service">
+      <img alt="Promos" height="50" src="https://storage.googleapis.com/a1aa/image/7q1fSkaNh43SN6PuIfl5j1XekzpZWtohPc4M0oQUTDCPT7ZnA.jpg" width="50"/>
+      <p>
+       Promos
+      </p>
+     </div>
+     <div class="service">
+      <img alt="Phone in Installments" height="50" src="https://storage.googleapis.com/a1aa/image/5kg3vI8swcpIP1MTc05kD38iYK0rTNWiwLzqbKJ2QzwYaP7E.jpg" width="50"/>
+      <p>
+       Phone in Installments
+      </p>
+     </div>
+    </section>
+    <section class="why-choose">
+     <h2>
+      Why choose Home Credit for your installment loans?
+     </h2>
+     <div class="features">
+      <div class="feature">
+       <i class="fas fa-check-circle">
+       </i>
+       Lowest interest &amp; monthly rates
+      </div>
+      <div class="feature">
+       <i class="fas fa-check-circle">
+       </i>
+       Easy application process
+      </div>
+      <div class="feature">
+       <i class="fas fa-check-circle">
+       </i>
+       Fast approval
+      </div>
+      <div class="feature">
+       <i class="fas fa-check-circle">
+       </i>
+       Flexible payment terms
+      </div>
+     </div>
+    </section>
+    <a class="chat-button" href="#">
+     Chat with us
+    </a>
+    <a class="feedback-button" href="#">
+     Share Feedback
+    </a>
+    
+</body>
+</html>
