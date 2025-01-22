@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hobbies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting to Know Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto p-5">
+        <div class="presentation">
+            <div class="slide active" id="slide1">
+                <h1 class="text-4xl font-bold text-center text-gray-800">Welcome to My Presentation!</h1>
+                <p class="text-lg text-center text-gray-600">Get to know me better.</p>
+                <button class="mt-5 px-4 py-2 bg-blue-500 text-white rounded" onclick="nextSlide(1)">Next</button>
+            </div>
+            
+            <div class="slide" id="slide2">
+                <h2 class="text-3xl font-semibold text-center text-gray-800">About Me</h2>
+                <p class="text-lg text-center text-gray-600">Hi! I'm [Your Name]. I love [Your Interests].</p>
+                <button class="mt-5 px-4 py-2 bg-blue-500 text-white rounded" onclick="nextSlide(-1)">Previous</button>
+                <button class="mt-5 px-4 py-2 bg-blue-500 text-white rounded" onclick="nextSlide(1)">Next</button>
+            </div>
+
+            <div class="slide" id="slide3">
+                <h2 class="text-3xl font-semibold text-center text-gray-800">My Hobbies</h2>
+                <ul class="list-disc list-inside text-lg text-gray-600 text-center">
+                    <li>Hobby 1</li>
+                    <li>Hobby 2</li>
+                    <li>Hobby 3</li>
+                </ul>
+                <button class="mt-5 px-4 py-2 bg-blue-500 text-white rounded" onclick="nextSlide(-1)">Previous</button>
+                <button class="mt-5 px-4 py-2 bg-blue-500 text-white rounded" onclick="nextSlide(1)">Next</button>
+            </div>
+
+            <div class="slide" id="slide4">
+                <h2 class="text-3xl font-semibold text-center text-gray-800">My Goals</h2>
+                <p class="text-lg text-center text-gray-600">In the future, I want to achieve [Your Goals].</p>
+                <button class="mt-5 px-4 py-2 bg-blue-500 text-white rounded" onclick="nextSlide(-1)">Previous</button>
+                <button class="mt-5 px-4 py-2 bg-blue-500 text-white rounded" onclick="nextSlide(1)">Next</button>
+            </div>
+
+            <div class="slide" id="slide5">
+                <h2 class="text-3xl font-semibold text-center text-gray-800">Thank You!</h2>
+                <p class="text-lg text-center text-gray-600">Feel free to connect with me!</p>
+                <button class="mt-5 px-4 py-2 bg-blue-500 text-white rounded" onclick="nextSlide(-1)">Previous</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Assets/JavaScript/itsjustme.js"></script>
 </body>
 </html>

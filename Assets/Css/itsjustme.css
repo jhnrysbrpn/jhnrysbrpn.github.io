@@ -9,6 +9,8 @@ body {
 }
 
 .button {
+  width: 40rem;
+  height: 4rem;
   position: relative;
   text-decoration: none;
   color: #fff;
