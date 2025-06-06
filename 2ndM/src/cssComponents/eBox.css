@@ -34,7 +34,7 @@ body{
 }
 .tinyBox{
   position:absolute;
-  background-color:rgb(83, 83, 83);
+  background: rgb(78, 77, 77);
   height:18.75px;
   width:18.75px;
   transition:top 0.3s,left 0.3s;  
