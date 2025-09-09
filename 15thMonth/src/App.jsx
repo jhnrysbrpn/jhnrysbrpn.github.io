@@ -1,13 +1,19 @@
-import LightMeUp from '../components/lightMeUp'
-import './App.css'
+// import React, { useState } from "react";
+// import LightMeUp from "../components/lightMeUp";
+import DYLM from "../components/DYLM";
 
-function App() {
+export default function App() {
+  // const [finished, setFinished] = useState(false);
 
   return (
     <>
-     <LightMeUp />
-    </>
-  )
-}
+      {/* { {!finished ? (
+        <LightMeUp onFinished={() => setFinished(true)} />
+      ) : (
+        <DYLM />
+      )} } */}
 
-export default App
+      <DYLM />
+    </>
+  );
+}
