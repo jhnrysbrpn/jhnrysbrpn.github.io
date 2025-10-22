@@ -1,9 +1,16 @@
- *, *::before, *::after { 
-  box-sizing: border-box; 
-}
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
+
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+    }
+
     html, body { 
       height: 100%; 
       margin: 0; 
+      overflow: hidden;
+      color: #d8facf;
+      font-family: "Genos", sans-serif;
+      text-shadow: 0 0 0.4rem rgba(0,0,0,0.7);
       -webkit-font-smoothing: antialiased; 
       -moz-osx-font-smoothing: grayscale; 
     }
@@ -19,13 +26,12 @@
     /* Frame container with stable aspect ratio (cross-browser) */
     .frame {
       width: 100%;
-      max-width: 1100px; /* control maximum visual width */
+      max-width: 1200px; /* control maximum visual width */
       aspect-ratio: 16/9; /* keeps the frame consistent across browsers */
       position: relative; /* parent for absolutely positioned overlays */
       margin: 0 auto;
     }
 
-    /* Inner image: scale to frame while preserving aspect */
     .frame img { 
       width: 100%; 
       height: 100%; 
@@ -33,21 +39,33 @@
       display: block; 
       border-radius: 1rem; }
 
-    /* Overlay card common style */
+    /* Overlay card  */
     .overlay {
-      position: absolute;
-      background: rgba(245,245,245,0.18); /* semi transparent card */
+      background: rgba(81, 255, 1, 0.04); 
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      border-radius: 1rem;
+      border-radius: 1.5rem;
       box-shadow: 0 10px 30px rgba(2,6,23,0.4);
       border: 1px solid rgba(255,255,255,0.06);
+      
+    }
+
+    .container {
+      padding: 0.5rem;
+      border-radius:  5% 60% 5% 5% / 5% 83% 17% 5%;
+      border: 4px solid rgba(81, 255, 1, 0.329);
+      filter: drop-shadow(0 0 0.10rem rgb(0, 0, 0));
+    }
+    .container1 {
+      border-radius:  5% 20% 5% 44% / 20% 5% 5% 94%;
+      border: 4px solid rgba(81, 255, 1, 0.329);
+      filter: drop-shadow(0 0 0.10rem rgb(0, 0, 0));
     }
 
     /* Avatar styling */
     .avatar {
       border-radius: 1.25rem;
-      border: 4px solid rgba(16,185,129,0.08); /* subtle border */
+      border: 4px solid rgba(16,185,129,0.08);
       display: block;
       width: 100%;
       height: 100%;

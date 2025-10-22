@@ -3,13 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Apple Space — cleaned</title>
-
+  <title>Apple Space</title>
 
   <link rel="stylesheet" href="Assets/Css/appleSpace.css" />   <!-- Css -->
-  <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwindcss CDN -->
-
-
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- Tailwindcss CDN -->
+  <script src="https://kit.fontawesome.com/96e8d283a5.js" crossorigin="anonymous"></script> <!-- Font Awesome CDN -->
 </head>
 <body class="antialiased bg-transparent text-slate-50 flex items-center justify-center overflow-hidden">
 
@@ -23,77 +21,130 @@
   >Your browser does not support the video tag.</video>
 
   <!-- Content Wrapper -->
-  <main class="w-full min-h-screen px-4 py-10 flex flex-col items-center text-center">
-    <header class="w-full max-w-6xl mx-auto mb-6">
-      <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-white drop-shadow-lg">
+  <main class="w-[100vw] h-[100vh] p-4 flex flex-col items-center text-center">
+    <header class="w-full mx-auto mt-8">
+      <h1 class="text-[4rem] font-extrabold leading-tight drop-shadow-lg">
         Welcome to Apple Space
       </h1>
     </header>
 
-  <!-- Frame -->
-    <div class="frame">
-     <!-- Decorative frame image -->
-      <img src="./Assets/appleSpace/frame1.png" alt="design frame" class="rounded-2xl shadow-2xl opacity-80" />
+    <!-- Frame -->
+    <div class="frame relative w-screen ">
+      <!-- frame image -->
+      <img src="./Assets/appleSpace/frame1.png" alt="design frame" class="contrast-250 opacity-60 w-full" />
 
-  <!--  Profile card  -->
+      <!-- Profile card -->
       <div
-        class="overlay"
-        style="width: 21.6%;
-               height: 42%; 
-               left: 6.4%; 
-               top: 13.5%; 
-               padding: 0.6rem;"
+        class="overlay absolute w-[20.9%] h-[40.9%] left-[6.7%] top-[13.6%]"
         aria-hidden="false"
       >
-  <!-- Profile picture  -->
+        <!-- Profile picture -->
         <img src="./Assets/Img/avatar.png" alt="avatar" class="avatar" />
       </div>
 
-  <!--  Name bar -->
+      <!-- Name bar) -->
       <div
-        class="overlay"
-        style="width: 48%;
-               height: 8%;
-               right: 8%;
-               top: 12%;
-               padding: 0.4rem;"
+        class="overlay absolute top-[12%] right-[9%] w-[40%] h-[6.5%] flex items-center justify-end px-4"
         aria-hidden="true"
       >
-        <div class="h-full flex items-center justify-start">
-          <span class="text-lg font-semibold text-white">Name / Title</span>
+
+        <div class="w-full">
+         <h1 class="text-[1.8rem] md:text-[2rem] font-semibold text-right">John Rey C. Sobrepeña</h1>
         </div>
       </div>
 
-  <!--  Content card -->
-      <div
-        class="overlay"
-        style="width: 52%;
-               height: 40%;
-               right: 6%;
-               top: 26%;
-               padding: 1rem;"
-      >
-        <div class="w-full h-full overflow-auto text-left">
-          <p class="text-sm sm:text-base leading-relaxed text-white/90">Content area — replace with real content. This block will scale proportionally with the frame thanks to percentage sizes and aspect-ratio. Use padding and rem-based font sizes for predictable cross-browser text layout.</p>
+        <!-- Content card -->
+      <div    
+        class=" absolute w-[60%] h-[40%] grid grid-cols-2 right-[9%] top-[22%]"
+      >       
+        <div class="container overlay w-[70%] h-full overflow-hidden text-left">
+
+          <div class="p-2 text-[.8rem] tracking-[.25rem] leading-relaxed "> <!-- Member 1 Socials -->
+            <h1 class="mt-4 text-xl font-bold"> 
+              Favorite Link 
+            </h1>
+            <p class="bottom-0">dasdas</p>
+          </div>   
+        </div>
+
+        <div class="container1 overlay w-[130%] h-[100%] p-2 overflow-hidden text-left translate-x-[-7rem]">
+          <div class="text-[1.2rem] leading-relaxed"> <!-- Member 1 Information -->
+            <p>
+            hello we are from Polytechnic University
+          </p>
+          </div>   
+        </div>
+
+      </div>
+
+      <!-- Team members panel -->
+<section class="absolute flex left-2.5 bottom-14.5 w-[75vw] h-[22%] ">
+  <!-- Vertical label -->
+  <div class=" flex items-center mb-3">
+    <p class="text-lg font-bold tracking-wider text-emerald-50/90 [writing-mode:vertical-rl]">Members</p>
+  </div>
+
+  <!-- Team grid -->
+  <div class="flex-1 h-full flex justify-center  mx-auto">
+
+    <div class="grid grid-cols-7 gap-6 w-[68vw] h-full items-start content-start">
+
+      <div class="overlay flex flex-col h-[80%] items-center">
+        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <div class="w-full aspect-square rounded-5xl overflow-hidden shadow-inner">
+          <img src="./Assets/Img/avatar.png" alt="Team member 1" class="w-auto h-[80%] object-cover">
         </div>
       </div>
 
-  <!--  team members panel -->
-      <div
-        class="overlay"
-        style="width: 18%;
-               height: 18%;
-               left: 6%;
-               bottom: 8%;
-               padding: 0.5rem;"
-        aria-hidden="true"
-      >
-        <div class="text-xs text-white/80">Team</div>
+      <div class="overlay flex flex-col h-[80%]  items-center">
+        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
+          <img src="./Assets/Img/avatar.png" alt="Team member 2" class="w-auto h-[80%] object-cover">
+        </div>
       </div>
 
+      <div class="overlay flex flex-col h-[80%]  items-center">
+        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
+          <img src="./Assets/Img/avatar.png" alt="Team member 3" class="w-auto h-[80%] object-cover">
+        </div>
+      </div>
+
+      <div class="overlay flex flex-col h-[80%]  items-center">
+        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
+          <img src="./Assets/Img/avatar.png" alt="Team member 4" class="w-auto h-[80%] object-cover">
+        </div>
+      </div>
+
+      <div class="overlay flex flex-col h-[80%] items-center">
+        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
+          <img src="./Assets/Img/avatar.png" alt="Team member 5" class="w-auto h-[80%] object-cover">
+        </div>
+      </div>
+
+      <div class="overlay flex flex-col h-[80%] items-center">
+        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
+          <img src="./Assets/Img/avatar.png" alt="Team member 6" class="w-auto h-[80%] object-cover">
+        </div>
+      </div>
+
+      <div class="overlay flex flex-col h-[80%] items-center">
+        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
+          <img src="./Assets/Img/avatar.png" alt="Team member 7" class="w-auto h-[80%] object-cover">
+        </div>
+      </div>
     </div>
-
+  </div>
+</section>
+      
+    </div>
+    
   </main>
 
+  
 </body>
 </html>
