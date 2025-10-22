@@ -8,7 +8,7 @@
       height: 100%; 
       margin: 0; 
       overflow: hidden;
-      color: #d8facf;
+      color: #f3ffef;
       font-family: "Genos", sans-serif;
       text-shadow: 0 0 0.4rem rgba(0,0,0,0.7);
       -webkit-font-smoothing: antialiased; 
@@ -53,13 +53,16 @@
       
     }
 
-    .container {
+    .containerLeft {
       padding: 0.5rem;
+      position: absolute;
       border-radius:  5% 60% 5% 5% / 5% 83% 17% 5%;
       border: 4px solid rgba(81, 255, 1, 0.329);
       filter: drop-shadow(0 0 0.10rem rgb(0, 0, 0));
     }
-    .container1 {
+    .containerRight {
+      padding: 0.5rem;
+      position: absolute;
       border-radius:  5% 20% 5% 44% / 20% 5% 5% 94%;
       border: 4px solid rgba(81, 255, 1, 0.329);
       filter: drop-shadow(0 0 0.10rem rgb(0, 0, 0));
