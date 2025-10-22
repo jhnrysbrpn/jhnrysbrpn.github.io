@@ -7,9 +7,9 @@
 
   <link rel="stylesheet" href="Assets/Css/appleSpace.css" />   <!-- Css -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- Tailwindcss CDN -->
-  <script src="https://kit.fontawesome.com/96e8d283a5.js" crossorigin="anonymous"></script> <!-- Font Awesome CDN -->
+  <!-- <script src="https://kit.fontawesome.com/96e8d283a5.js" crossorigin="anonymous"></script> Font Awesome CDN -->
 </head>
-<body class="antialiased bg-transparent text-slate-50 flex items-center justify-center overflow-hidden">
+<body>
 
   <!-- Background video -->
   <video
@@ -21,7 +21,7 @@
   >Your browser does not support the video tag.</video>
 
   <!-- Content Wrapper -->
-  <main class="w-[100vw] h-[100vh] p-4 flex flex-col items-center text-center">
+  <main class="w-[100vw] h-[100vh] flex flex-col items-center text-center">
     <header class="w-full mx-auto mt-8">
       <h1 class="text-[4rem] font-extrabold leading-tight drop-shadow-lg">
         Welcome to Apple Space
@@ -29,41 +29,40 @@
     </header>
 
     <!-- Frame -->
-    <div class="frame relative w-screen ">
-      <!-- frame image -->
+    <div class="frame">
       <img src="./Assets/appleSpace/frame1.png" alt="design frame" class="contrast-250 opacity-60 w-full" />
 
       <!-- Profile card -->
       <div
-        class="overlay absolute w-[20.9%] h-[40.9%] left-[6.7%] top-[13.6%]"
+        class="overlay absolute w-[20.9%] h-[40.9%] left-[6.7%] top-[13%]"
         aria-hidden="false"
       >
         <!-- Profile picture -->
-        <img src="./Assets/Img/avatar.png" alt="avatar" class="avatar" />
+        <img src="./Assets/appleSpace/avatar.png" alt="avatar" class="avatar" />
       </div>
 
       <!-- Name bar) -->
       <div
-        class="overlay absolute top-[12%] right-[9%] w-[40%] h-[6.5%] flex items-center justify-end px-4"
+        class="overlay absolute top-[10%] right-[2.5%] w-[56.8%] h-[6.5%] flex"
         aria-hidden="true"
       >
 
         <div class="w-full">
-         <h1 class="text-[1.8rem] md:text-[2rem] font-semibold text-right">John Rey C. Sobrepeña</h1>
+         <h1 class="text-[1.8rem] font-semibold text-center">John Rey C. Sobrepeña</h1>
         </div>
       </div>
 
         <!-- Content card -->
       <div    
-        class=" absolute w-[60%] h-[40%] grid grid-cols-2 right-[9%] top-[22%]"
+        class=" absolute w-[60%] h-[40%] grid grid-cols-2 right-[8.5%] top-[22%]"
       >       
         <div class="container overlay w-[70%] h-full overflow-hidden text-left">
 
           <div class="p-2 text-[.8rem] tracking-[.25rem] leading-relaxed "> <!-- Member 1 Socials -->
             <h1 class="mt-4 text-xl font-bold"> 
-              Favorite Link 
+               
             </h1>
-            <p class="bottom-0">dasdas</p>
+            <p class="bottom-0"></p>
           </div>   
         </div>
 
@@ -78,63 +77,63 @@
       </div>
 
       <!-- Team members panel -->
-<section class="absolute flex left-2.5 bottom-14.5 w-[75vw] h-[22%] ">
+<section class="absolute flex left-2.5 bottom-[10.3%] w-[100%] h-[22%] ">
   <!-- Vertical label -->
   <div class=" flex items-center mb-3">
     <p class="text-lg font-bold tracking-wider text-emerald-50/90 [writing-mode:vertical-rl]">Members</p>
   </div>
 
   <!-- Team grid -->
-  <div class="flex-1 h-full flex justify-center  mx-auto">
+  <div class="flex-1 flex h-full justify-center my-[.3rem]">
 
-    <div class="grid grid-cols-7 gap-6 w-[68vw] h-full items-start content-start">
+    <div class="grid grid-cols-7 gap-4 w-[95%] h-full">
 
       <div class="overlay flex flex-col h-[80%] items-center">
-        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <span class="text-2xl text-emerald-50/80 ">Sobrepeña</span>
         <div class="w-full aspect-square rounded-5xl overflow-hidden shadow-inner">
-          <img src="./Assets/Img/avatar.png" alt="Team member 1" class="w-auto h-[80%] object-cover">
+          <img src="./Assets/appleSpace/avatar.png" alt="Team member 1" class="w-full h-full px-0.5 pb-0.5 object-fit ">
         </div>
       </div>
 
       <div class="overlay flex flex-col h-[80%]  items-center">
-        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <span class="text-2xl text-emerald-50/80 ">Adan</span>
         <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-          <img src="./Assets/Img/avatar.png" alt="Team member 2" class="w-auto h-[80%] object-cover">
+          <img src="./Assets/appleSpace/avatar.png" alt="Team member 2" class="w-full h-full pb-0.5  object-fit ">
         </div>
       </div>
 
       <div class="overlay flex flex-col h-[80%]  items-center">
-        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <span class="text-2xl text-emerald-50/80 ">Talento</span>
         <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-          <img src="./Assets/Img/avatar.png" alt="Team member 3" class="w-auto h-[80%] object-cover">
+          <img src="./Assets/appleSpace/avatar.png" alt="Team member 3" class="w-full h-full pb-0.5  object-fit ">
         </div>
       </div>
 
       <div class="overlay flex flex-col h-[80%]  items-center">
-        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <span class="text-2xl text-emerald-50/80 ">Criss</span>
         <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-          <img src="./Assets/Img/avatar.png" alt="Team member 4" class="w-auto h-[80%] object-cover">
+          <img src="./Assets/appleSpace/avatar.png" alt="Team member 4" class="w-full h-full pb-0.5  object-fit ">
         </div>
       </div>
 
       <div class="overlay flex flex-col h-[80%] items-center">
-        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <span class="text-2xl text-emerald-50/80 ">Benagua</span>
         <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-          <img src="./Assets/Img/avatar.png" alt="Team member 5" class="w-auto h-[80%] object-cover">
+          <img src="./Assets/appleSpace/avatar.png" alt="Team member 5" class="w-full h-full pb-0.5  object-fit ">
         </div>
       </div>
 
       <div class="overlay flex flex-col h-[80%] items-center">
-        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <span class="text-2xl text-emerald-50/80 ">Vida</span>
         <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-          <img src="./Assets/Img/avatar.png" alt="Team member 6" class="w-auto h-[80%] object-cover">
+          <img src="./Assets/appleSpace/avatar.png" alt="Team member 6" class="w-full h-full pb-0.5  object-fit ">
         </div>
       </div>
 
       <div class="overlay flex flex-col h-[80%] items-center">
-        <span class="text-xs text-emerald-50/80 mb-2">Team</span>
+        <span class="text-2xl text-emerald-50/80 ">Gutierrez</span>
         <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-          <img src="./Assets/Img/avatar.png" alt="Team member 7" class="w-auto h-[80%] object-cover">
+          <img src="./Assets/appleSpace/avatar.png" alt="Team member 7" class="w-full h-full pb-0.5  object-fit ">
         </div>
       </div>
     </div>
